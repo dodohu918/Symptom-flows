@@ -1,0 +1,123 @@
+{
+  "nodes": {
+    "14_nocturia_start": {
+      "No": "14_1",
+      "question": "您提到{{SYMPTOM}}。請問是否過多飲用咖啡因或是酒精？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "14_reduce_intake",
+      "nextIfNo": "14_medication_check"
+    },
+    "14_reduce_intake": {
+      "question": "建議您考慮減少咖啡因或酒精的飲用，以改善夜尿問題。或是您可以考慮家庭醫學科醫師進一步評估。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "14_medication_check": {
+      "No": "14_2",
+      "question": "您是否正在服用以下藥物：抗膽鹼類藥物、心臟科藥物、鋰鹽、茶鹼類藥物、高劑量維他命D或新型糖尿病藥物？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "14_medication_discussion",
+      "nextIfNo": "14_symptoms_check"
+    },
+    "14_medication_discussion": {
+      "question": "建議您和開立該藥物的醫師討論，或考慮家庭醫學科醫師進一步評估。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "14_symptoms_check": {
+      "No": "14_3",
+      "question": "請問以下哪一種情況最符合？\n1. 合併頻尿、夜尿、尿失禁或排尿時間過長\n2. 有心臟病史\n3. 腳水腫\n4. 枕邊人說會打鼾\n5. 多吃、多喝或體重減輕\n6. 排尿疼痛或尿液混濁合併發燒",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3", "4", "5", "6"],
+      "next": {
+        "1": "14_urology_specialty",
+        "2": "14_cv_specialty",
+        "3": "14_cv_specialty",
+        "4": "14_cm_ent_choice",
+        "5": "14_endocrine_specialty",
+        "6": "14_nephrology_specialty"
+      }
+    },
+    "14_urology_specialty": {
+      "question": "建議科別：泌尿科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "uro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "14_cv_specialty": {
+      "question": "建議科別：心臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cv"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "14_cm_ent_choice": {
+      "No": "14_4",
+      "question": "建議您就診：1. 胸腔內科，2. 耳鼻喉科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "14_pulmonology_specialty",
+        "2": "14_ent_specialty"
+      }
+    },
+    "14_endocrine_specialty": {
+      "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "endocrine"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "14_nephrology_specialty": {
+      "question": "建議科別：腎臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "nephro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "14_pulmonology_specialty": {
+      "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "14_ent_specialty": {
+      "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ent"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "14_fm_specialty": {
+      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

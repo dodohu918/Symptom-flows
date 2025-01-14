@@ -1,0 +1,43 @@
+{
+    "nodes": {
+      "38_runnyNose_start": {
+        "No": "38_1",
+        "question": "您提到{{SYMPTOM}}。建議您就診：1. 耳鼻喉科，2. 胸腔內科，3. 家庭醫學科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3"],
+        "next": {
+          "1": "38_ent_specialty",
+          "2": "38_pulmonology_specialty",
+          "3": "38_family_medicine_specialty"
+        }
+      },
+      "38_ent_specialty": {
+        "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "ent"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "38_pulmonology_specialty": {
+        "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "cm"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "38_family_medicine_specialty": {
+        "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  

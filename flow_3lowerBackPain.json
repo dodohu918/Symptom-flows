@@ -1,0 +1,71 @@
+{
+  "nodes": {
+    "3_lowerBackPain_start": {
+      "No": "3_1",
+      "question": "您提到{{SYMPTOM}}。請問哪一種情況最符合？\n1. 泌尿道症狀\n2. 合併其他位置骨頭關節疼痛\n3. 最近曾經有外傷\n4. 疼痛延伸到某一側腳底, 合併痠或麻的感覺",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3", "4"],
+      "next": {
+        "1": "3_urology_nephro_choice",
+        "2": "3_rheum_specialty",
+        "3": "3_ortho_injury_specialty",
+        "4": "3_ortho_radicular_specialty"
+      }
+    },
+    "3_urology_nephro_choice": {
+      "No": "3_2",
+      "question": "建議您就診：1. 泌尿科，2. 腎臟科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "3_urology_specialty",
+        "2": "3_nephrology_specialty"
+      }
+    },
+    "3_urology_specialty": {
+      "question": "建議科別：泌尿科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "uro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "3_nephrology_specialty": {
+      "question": "建議科別：腎臟科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "nephro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "3_rheum_specialty": {
+      "question": "建議科別：風濕免疫科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "rheum"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "3_ortho_injury_specialty": {
+      "question": "建議科別：骨科 (近期外傷或骨骼評估)。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ortho"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "3_ortho_radicular_specialty": {
+      "question": "建議科別：骨科 (坐骨神經、椎間盤檢查)。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ortho"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

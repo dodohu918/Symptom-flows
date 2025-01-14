@@ -1,0 +1,34 @@
+{
+  "nodes": {
+    "9_tinnitus_start": {
+      "No": "9_1",
+      "question": "您提到{{SYMPTOM}}。建議您就診：1. 耳鼻喉科，2. 家庭醫學科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "9_ent_specialty",
+        "2": "9_family_medicine_specialty"
+      }
+    },
+  
+    "9_ent_specialty": {
+      "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ent"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+  
+    "9_family_medicine_specialty": {
+      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "nodes": {
+    "6_handTremor_start": {
+      "No": "6_1",
+      "question": "您提到手抖。請問您有沒有飲酒史？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "6_alcohol_choice",
+      "nextIfNo": "6_alcohol_choice"
+    },
+    "6_alcohol_choice": {
+      "No": "6_2",
+      "question": "請問以下哪一種情況最符合？\n1. 走路小碎步, 行動僵硬或是走路不穩\n2. 頸部腫大, 體重減輕",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "6_neuro_fm_specialty",
+        "2": "6_endo_ent_fm_specialty"
+      }
+    },
+    "6_neuro_fm_specialty": {
+      "No": "6_3",
+      "question": "建議您就診：1. 神經內科，2. 家庭醫學科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "6_neuro_specialty",
+        "2": "6_family_medicine_specialty"
+      }
+    },
+    "6_endo_ent_fm_specialty": {
+      "No": "6_4",
+      "question": "建議您就診：1. 內分泌科，2. 耳鼻喉科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "6_endocrine_specialty",
+        "2": "6_ent_specialty"
+      }
+    },
+    "6_neuro_specialty": {
+      "question": "建議科別：神經內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "neuro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "6_family_medicine_specialty": {
+      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "6_endocrine_specialty": {
+      "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "endocrine"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "6_ent_specialty": {
+      "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ent"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

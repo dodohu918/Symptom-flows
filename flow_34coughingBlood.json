@@ -1,0 +1,39 @@
+{
+  "nodes": {
+    "34_coughingBlood_start": {
+      "No": "34_1",
+      "question": "您提到{{SYMPTOM}}。請問是否有合併流鼻血的病史？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "34_ent_cm_choice",
+      "nextIfNo": "34_pulmonology_specialty"
+    },
+    "34_ent_cm_choice": {
+      "No": "34_2",
+      "question": "建議您就診：1. 耳鼻喉科，2. 胸腔內科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "34_ent_specialty",
+        "2": "34_pulmonology_specialty"
+      }
+    },
+    "34_pulmonology_specialty": {
+      "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "34_ent_specialty": {
+      "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ent"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

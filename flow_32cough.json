@@ -1,0 +1,55 @@
+{
+  "nodes": {
+    "32_cough_start": {
+      "No": "32_1",
+      "question": "您提到{{SYMPTOM}}。請問咳嗽的時間有多久？(1=不到2個月, 2=超過2個月)",
+      "type": "yes_no",
+      "nextIfYes": "32_cough_lessThan2Months",
+      "nextIfNo": "32_cough_moreThan2Months"
+    },
+    "32_cough_lessThan2Months": {
+      "No": "32_2",
+      "question": "請問是否合併以下情況：胸悶痛、冒冷汗、過去有氣喘或慢性阻塞性肺病且現在發作很不舒服，或其他急性症狀？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "32_er_specialty",
+      "nextIfNo": "32_pulmonology_specialty"
+    },
+    "32_cough_moreThan2Months": {
+      "No": "32_3",
+      "question": "建議您就診：1. 胸腔內科，2. 腸胃科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "32_pulmonology_specialty",
+        "2": "32_gastro_specialty"
+      }
+    },
+    "32_er_specialty": {
+      "question": "建議科別：急診。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "er"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "32_pulmonology_specialty": {
+      "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "32_gastro_specialty": {
+      "question": "建議科別：腸胃科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "gi"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

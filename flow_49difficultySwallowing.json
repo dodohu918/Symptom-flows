@@ -1,0 +1,33 @@
+{
+    "nodes": {
+      "49_difficultySwallowing_start": {
+        "No": "49_1",
+        "question": "您提到{{SYMPTOM}}。建議您就診：1. 腸胃內科，2. 耳鼻喉科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "49_gastro_specialty",
+          "2": "49_ent_specialty"
+        }
+      },
+      "49_gastro_specialty": {
+        "question": "建議科別：腸胃內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "gi"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "49_ent_specialty": {
+        "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "ent"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  

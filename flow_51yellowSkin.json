@@ -1,0 +1,33 @@
+{
+    "nodes": {
+      "51_yellowSkin_start": {
+        "No": "51_1",
+        "question": "您提到{{SYMPTOM}}。建議您就診：1. 皮膚科，2. 腸胃內科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "51_dermatology_specialty",
+          "2": "51_gastro_specialty"
+        }
+      },
+      "51_dermatology_specialty": {
+        "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "derm"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "51_gastro_specialty": {
+        "question": "建議科別：腸胃內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "gi"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  

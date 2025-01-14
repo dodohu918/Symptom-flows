@@ -1,0 +1,79 @@
+{
+  "nodes": {
+    "2_RLS_start": {
+      "No": "2_1",
+      "question": "您提到下肢有奇怪的感覺。請問最近有沒有服用抗組織胺、鋰鹽或其他身心科相關藥物？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "2_drug_discussion",
+      "nextIfNo": "2_pregnancy_check"
+    },
+  
+    "2_drug_discussion": {
+      "No": "2_2",
+      "question": "建議您和開立該藥物的醫師討論，或就診家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "2_find_clinic_fm",
+      "nextIfNo": "end"
+    },
+  
+    "2_pregnancy_check": {
+      "No": "2_3",
+      "question": "您是否為女性且懷孕或有懷孕的可能？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "2_gyn_specialty",
+      "nextIfNo": "2_final_choice"
+    },
+  
+    "2_gyn_specialty": {
+      "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "obsgyn"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+  
+    "2_final_choice": {
+      "No": "2_4",
+      "question": "請選擇最符合的情形：\n1. 您是否有嚴重腎臟疾病？\n2. 您是否有手部顫抖、僵硬、動作緩慢等症狀？\n3. 您是否有其他慢性疾病(如貧血)的病史？",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3"],
+      "next": {
+        "1": "2_find_clinic_nephro",
+        "2": "2_find_clinic_neuro",
+        "3": "2_find_clinic_fm"
+      }
+    },
+
+    "2_find_clinic_nephro": {
+      "question": "建議科別：腎臟科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "nephro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+  
+    "2_find_clinic_neuro": {
+      "question": "建議科別：神經內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "neuro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+  
+    "2_find_clinic_fm": {
+      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

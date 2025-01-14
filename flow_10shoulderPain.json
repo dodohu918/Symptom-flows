@@ -1,0 +1,37 @@
+{
+  "nodes": {
+    "10_shoulderPain_start": {
+      "No": "10_1",
+      "question": "您提到{{SYMPTOM}}。請問以下哪一種情況最符合？\n1. 最近有外傷\n2. 喘\n3. 臉或是上臂水腫\n4. 咳血\n5. 體重減輕",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3", "4", "5"],
+      "next": {
+        "1": "10_orthopedic_specialty",
+        "2": "10_pulmonary_specialty",
+        "3": "10_pulmonary_specialty",
+        "4": "10_pulmonary_specialty",
+        "5": "10_pulmonary_specialty"
+      }
+    },
+  
+    "10_orthopedic_specialty": {
+      "question": "建議科別：骨科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ortho"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+  
+    "10_pulmonary_specialty": {
+      "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

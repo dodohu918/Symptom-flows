@@ -1,0 +1,181 @@
+﻿I,感染症及寄生蟲病 Certain infectious and parasitic diseases,,,,,A00-B99," 22,554 "
+,,除感染性胃腸炎及大腸炎外之腸道感染性疾病 Intestinal infectious diseases except infectious gastroenteritis and colitis,,,,A00-A08," 1,371 "
+,,"感染性胃腸炎及大腸炎 Infectious gastroenteritis and colitis, unspecified",,,,A09," 5,349 "
+,,結核病 Tuberculosis,,,,A15-A19, 71 
+,,敗血症 Sepsis,,,,A40-A41, 345 
+,,人類免疫不全病毒疾病 Human immunodeficiency virus [HIV] disease ,,,,B20, 125 
+,,其他感染症及寄生蟲病 Other infectious and parasitic diseases ,,,,remainder of A00-B99," 17,305 "
+II,腫瘤 Neoplasms,,,,,C00-D49," 10,929 "
+,,"唇、口腔及咽惡性腫瘤 Malignant neoplasm of lip, oral cavity and pharynx",,,,C00-C14, 302 
+,,食道惡性腫瘤 Malignant neoplasm of esophagus ,,,,C15, 50 
+,,胃惡性腫瘤 Malignant neoplasm of stomach ,,,,C16, 92 
+,,結腸惡性腫瘤 Malignant neoplasm of colon,,,,C18, 316 
+,,"直腸乙狀結腸連接處、直腸、肛門及肛管惡性腫瘤 Malignant neoplasm of rectosigmoid junction, rectum, anus and anal canal",,,,C19-C21, 175 
+,,肝及肝內膽管惡性腫瘤 Malignant neoplasm of liver and intrahepatic bile ducts ,,,,C22, 277 
+,,胰臟惡性腫瘤 Malignant neoplasm of pancreas,,,,C25, 45 
+,,其他消化器官之惡性腫瘤 Other malignant neoplasms of digestive organs ,,,,"C17, C23-C24, C26", 36 
+,,喉惡性腫瘤 Malignant neoplasms of larynx ,,,,C32, 26 
+,,"氣管、支氣管和肺惡性腫瘤 Malignant neoplasm of trachea, bronchus and lung",,,,C33-C34, 382 
+,,其他呼吸系統及胸腔內器官惡性腫瘤  Other malignant neoplasms of respiratory and intrathoracic organs,,,,"C30-C31, C37-C39", 30 
+,,肢體骨及關節軟骨惡性腫瘤 Malignant neoplasm of bone and articular cartilage ,,,,C40-C41, 11 
+,,皮膚惡性黑色素瘤 Malignant melanoma of skin ,,,,C43, 9 
+,,皮膚之其他及未明示惡性腫瘤 Other and unspecified malignant neoplasm of skin,,,,C44, 55 
+,,間皮及軟組織之惡性腫瘤 Malignant neoplasms of mesothelial and soft tissue,,,,C45-C49, 45 
+,,乳房惡性腫瘤 Malignant neoplasm of breast ,,,,C50, 743 
+,,子宮頸惡性腫瘤 Malignant neoplasm of cervix uteri ,,,,C53, 122 
+,,子宮體及未明示部位子宮惡性腫瘤 Malignant neoplasm of other and unspecified parts of uterus,,,,C54-C55, 217 
+,,其他女性生殖器官之惡性腫瘤 Other malignant neoplasms of female genital organs,,,,"C51-C52, C56-C58", 145 
+,,攝護腺惡性腫瘤 Malignant neoplasm of prostate,,,, C61, 555 
+,,其他男性生殖器官之惡性腫瘤 Other malignant neoplasms of male genital organs,,,,"C60, C62-C63", 28 
+,,膀胱惡性腫瘤 Malignant neoplasm of bladder ,,,,C67, 120 
+,,其他泌尿道之惡性腫瘤 Other malignant neoplasms of urinary tract ,,,,"C64-C66, C68", 118 
+,,眼與附器惡性腫瘤 Malignant neoplasm of eye and adnexa,,,,C69, 4 
+,,腦惡性腫瘤 Malignant neoplasm of brain ,,,,C71, 37 
+,,中樞神經系統其他部位惡性腫瘤 Malignant neoplasm of other parts of central nervous system ,,,,"C70,C72", 8 
+,,"其他、界定不明、續發性及未明示部位之惡性腫瘤 Malignant neoplasm of other, ill-defined, secondary and unspecified sites",,,,C73-C80, 508 
+,,何杰金淋巴瘤 Hodgkin lymphoma,,,,C81, 11 
+,,非何杰金(氏)淋巴瘤 Non-Hodgkin's lymphoma ,,,,C82-C85, 92 
+,,白血病 Leukaemia ,,,,C91-C95, 65 
+,,"其他淋巴、造血及相關組織之惡性腫瘤 Other malignant neoplasms of lymphoid, haematopoietic and related tissue",,,,"C88-C90, C96", 36 
+,,子宮頸原位癌 Carcinoma in situ of cervix uteri,,,,D06, 61 
+,,皮膚良性腫瘤 Benign neoplasm of skin,,,,D22-D23," 1,532 "
+,,乳房良性腫瘤 Benign neoplasm of breast ,,,,D24, 595 
+,,子宮平滑肌瘤 Leiomyoma of uterus,,,,D25," 3,516 "
+,,卵巢良性腫瘤 Benign neoplasm of ovary ,,,,D27," 1,031 "
+,,泌尿器官良性腫瘤 Benign neoplasm of urinary organs ,,,,D30, 81 
+,,大腦及中樞神經系統其他部位之良性腫瘤 Benign neoplasm of brain and other parts of central nervous system ,,,,D33, 101 
+,,其他腫瘤 Other  neoplasms ,,,,remainder of C00-D49 ," 4,457 "
+III,血液和造血器官及涉及免疫機轉的疾患 Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,,,,,D50-D89," 3,286 "
+,,貧血 Anaemias,,,,D50-D64," 2,526 "
+,,其他血液和造血器官及涉及免疫機轉的疾患 Other diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,,,,D65-D89, 862 
+IV,"內分泌、營養和代謝疾病 Endocrine, nutritional and metabolic diseases",,,,,E00-E89," 24,817 "
+,,糖尿病 Diabetes mellitus ,,,,E08-E13," 10,396 "
+,,"其他內分泌、營養和代謝疾病 Other endocrine, nutritional and metabolic diseases",,,,remainder of E00-E89," 21,647 "
+V,"精神、行為和神經發展疾患 Mental, behavioral and neurodevelopmental disorders",,,,,F01-F99," 12,333 "
+,,失智症 Dementia ,,,,F01-F03," 1,170 "
+,,酒精相關障礙症 Alcohol related disorders,,,,F10, 187 
+,,其他精神作用物質相關障礙症 Other mental and behavioural disorders due to other psychoactive substance use ,,,,F11-F19, 631 
+,,"思覺失調、準思覺失調、妄想和其他非情緒精神病症 Schizophrenia, schizotypal, delusional, and other non-mood psychotic disorders",,,,F20-F29, 610 
+,,情緒障礙症 Mood [affective] disorders,,,,F30-F39," 3,031 "
+,,"焦慮、解離、壓力相關、身體障礙和其他非精神病的精神疾患 Anxiety, dissociative, stress-related, somatoform and other nonpsychotic mental disorders",,,,F40-F48," 6,563 "
+,,智能不足 Intellectual disabilities,,,,F70-F79, 198 
+,,"其他精神、行為和神經發展疾患  Other mental, behavioral and neurodevelopmental disorders",,,,remainder of F01-F99," 4,682 "
+VI,神經系統疾病 Diseases of the nervous system,,,,,G00-G99," 12,573 "
+,,阿茲海默氏病 Alzheimer's disease,,,,G30, 226 
+,,多發性硬化症 Multiple sclerosis,,,,G35, 13 
+,,癲癇及重覆發作 Epilepsy and recurrent seizures,,,,G40, 534 
+,,短暫性腦缺血發作及相關症候群 Transient cerebral ischaemic attacks and related syndromes,,,,G45, 626 
+,,其他神經系統疾病 Other diseases of the nervous system,,,,remainder of G00-G99," 11,703 "
+VII,眼與附器疾病 Diseases of the eye and adnexa,,,,,H00-H59," 30,700 "
+,,白內障 Cataract,,,,"H25-H26, H28"," 5,570 "
+,,青光眼 Glaucoma,,,,H40-H42," 2,136 "
+,,其他眼與附器疾病 Other diseases of the eye and adnexa,,,,remainder of H00-H59," 30,166 "
+VIII,耳與乳突疾病 Diseases of the ear and mastoid process ,,,,,H60-H95," 11,859 "
+IX,循環系統疾病 Diseases of the circulatory system,,,,,I00-I99," 23,027 "
+,,高血壓性疾病 Hypertensive diseases ,,,,I10-I15," 18,064 "
+,,心絞痛 Angina pectoris,,,,I20," 1,188 "
+,,急性心肌梗塞 Acute myocardial infarction,,,,I21-I22, 373 
+,,其他缺血性心臟病 Other ischaemic heart disease,,,,I23-I25," 3,097 "
+,,肺性心臟病和肺循環疾病 Pulmonary heart disease and diseases of pulmonary circulation,,,,I26-I28, 83 
+,,傳導障礙及心臟節律不整 Conduction disorders and cardiac arrhythmias,,,,I44-I49," 2,711 "
+,,心臟衰竭 Heart failure,,,,I50, 976 
+,,腦血管疾病 Cerebrovascular diseases,,,,I60-I69," 2,618 "
+,,動脈粥樣硬化 Atherosclerosis,,,,I70, 254 
+,,下肢靜脈曲張 Varicose veins of lower extremities,,,,I83, 197 
+,,其他循環系統疾病 Other diseases of the circulatory system,,,,remainder of I00-I99," 2,911 "
+X,呼吸系統疾病 Diseases of the respiratory system,,,,,J00-J99," 65,931 "
+,,急性上呼吸道感染和流行性感冒 Acute upper respiratory infections and influenza,,,,J00-J11," 60,110 "
+,,肺炎 Pneumonia,,,,J12-J18," 3,975 "
+,,其他急性下呼吸道感染 Other acute lower respiratory infections,,,,J20-J22," 25,522 "
+,,扁桃腺及腺樣體之慢性疾病 Chronic diseases of tonsils and adenoids,,,,J35, 219 
+,,其他上呼吸道疾病 Other diseases of upper respiratory tract,,,,"J30-J34, J36-J39"," 19,836 "
+,,慢性阻塞性肺疾病和支氣管擴張症 Chronic obstructive pulmonary disease and bronchiectasis,,,,"J40-J44, J47"," 3,712 "
+,,氣喘 Asthma,,,,J45," 3,798 "
+,,其他呼吸系統疾病 Other diseases of the respiratory system,,,,remainder of J00-J99, 888 
+XI,消化系統疾病 Diseases of the digestive system,,,,,K00-K95," 41,404 "
+,,牙齒及支持性構造疾患 Disorders of teeth and supporting structures,,,,K00-K08, 821 
+,,其他口腔和唾液腺疾病 Other diseases of oral cavity and salivary glands,,,,K09-K14," 4,254 "
+,,食道相關疾病 Diseases of oesophagus,,,,K20-K23," 9,166 "
+,,消化性潰瘍 Peptic ulcer,,,,K25-K28," 5,389 "
+,,消化不良和其他胃及十二指腸疾病 Dyspepsia and other diseases of stomach and duodenum,,,,K29-K31," 17,582 "
+,,闌尾疾病 Diseases of appendix,,,,K35-K38, 115 
+,,腹股溝疝氣 Inguinal hernia,,,,K40, 263 
+,,其他腹部疝氣 Other abdominal hernia,,,,K41-K46, 74 
+,,克隆氏病[局部性腸炎]和潰瘍性結腸炎 Crohn's disease and ulcerative colitis,,,,K50-K51, 128 
+,,其他及未明示非傳染性胃腸炎及結腸炎 Other and unspecified noninfective gastroenteritis and colitis,,,,K52," 12,363 "
+,,麻痺性腸阻塞及未伴有疝氣的腸道阻塞 Paralytic ileus and intestinal obstruction without hernia,,,,K56, 417 
+,,腸憩室性疾病 Diverticular disease of intestine,,,,K57, 156 
+,,肛門及直腸疾病 Diseases of anus and rectum,,,,K60-K62, 792 
+,,其他腸道疾病 Other diseases of intestine,,,,"K55, K58-K59, K63"," 8,767 "
+,,酒精性肝疾病 Alcoholic liver disease,,,,K70, 166 
+,,其他肝臟疾病 Other diseases of liver,,,,K71-K77," 4,351 "
+,,膽結石 Cholelithiasis,,,,K80, 973 
+,,其他膽囊和膽道疾病 Other diseases of gall bladder and biliary tract,,,,K81-K83, 564 
+,,胰臟疾病 Diseases of pancreas,,,,K85-K87, 266 
+,,其他消化系統疾病 Other diseases of the digestive system,,,,remainder of K00-K95," 4,063 "
+XII,皮膚及皮下組織疾病 Diseases of the skin and subcutaneous tissue,,,,,L00-L99," 34,119 "
+,,皮膚及皮下組織的感染  Infections of the skin and subcutaneous tissue,,,,L00-L08," 10,619 "
+,,"皮膚炎、濕疹和鱗屑性丘疹疾患 Dermatitis, eczema and papulosquamous disorders",,,,L20-L45," 22,479 "
+,,其他皮膚和皮下組織疾病 Other diseases of the skin and subcutaneous tissue,,,,remainder of L00-L99," 15,394 "
+XIII,肌肉骨骼系統及結締組織疾病 Diseases of the musculoskeletal system and connective tissue,,,,,M00-M99," 31,250 "
+,,髖部骨關節炎 Osteoarthritis of hip,,,,M16, 318 
+,,膝部骨關節炎 Osteoarthritis of knee,,,,M17," 3,699 "
+,,膝內在障礙 Internal derangement of knee,,,,M23, 328 
+,,其他關節病變 Other arthropathies,,,,"M00-M15, M18-M22, M24-M25"," 11,744 "
+,,全身性結締組織疾患 Systemic connective tissue disorders,,,,M30-M36," 1,000 "
+,,變形性背部病變和脊椎病變 Deforming dorsopathies and spondylopathies,,,,M40-M49," 7,095 "
+,,椎間盤疾病 Intervertebral disc disorders,,,,M50-M51," 3,169 "
+,,背痛 Dorsalgia,,,,M54," 8,636 "
+,,軟組織疾患 Soft tissue disorders ,,,,M60-M79," 17,126 "
+,,其他肌肉骨骼系統及結締組織疾病 Other disorders of the musculoskeletal system and connective tissue,,,,remainder of M00-M99," 2,530 "
+XIV,生殖泌尿系統疾病 Diseases of the genitourinary system,,,,,N00-N99," 23,651 "
+,,腎絲球和腎小管－間質疾病 Glomerular and renal tubulo-interstitial diseases,,,,N00-N16," 1,375 "
+,,急性腎衰竭和慢性腎臟病 Acute kidney failure and chronic kidney disease,,,,N17-N19," 3,166 "
+,,尿石症 Urolithiasis,,,,N20-N23," 1,952 "
+,,其他泌尿系統疾病 Other diseases of the urinary system,,,,N25-N39," 7,875 "
+,,攝護腺增大 Enlarged prostate,,,,N40," 7,065 "
+,,男性不孕症 Male infertility,,,,N46, 114 
+,,其他男性生殖器官疾病 Other diseases of male genital organs,,,,N41-N53," 3,255 "
+,,乳房疾患 Disorders of breast ,,,,N60-N65," 2,545 "
+,,女性骨盆腔器官炎性疾病 Inflammatory diseases of female pelvic organs,,,,N70-N77," 9,799 "
+,,"月經、停經和其他女性生殖病況 Menstrual, menopausal and other female genital conditions",,,,N91-N95," 12,407 "
+,,女性不孕症 Female infertility,,,,N97, 495 
+,,其他生殖泌尿系統疾病 Other diseases of the genitourinary system,,,,remainder of N00-N99," 2,633 "
+XV,"妊娠、生產與產褥期 Pregnancy, childbirth and the puerperium",,,,,O00-O9A," 2,037 "
+,,終止妊娠伴有合併症 Complications following (induced) termination of pregnancy,,,,O04, 26 
+,,其他伴有流產後果的妊娠 Other pregnancy with abortive outcome ,,,,"O00-O03, O07-O08", 480 
+,,主要在產前期的妊娠併發症 Complications of pregnancy predominantly in the antenatal period,,,,O10-O48," 1,632 "
+,,產程和分娩的併發症 Complications of labor and delivery,,,,O60-O77, 441 
+,,足月正常生產 Encounter for full-term uncomplicated delivery,,,,O80, 55 
+,,無適應症的剖腹生產 Encounter for cesarean delivery without indication,,,,O82, 2 
+,,主要與產褥期有關的併發症 Complications predominantly related to the puerperium,,,,O85-O92, 154 
+,,"其他妊娠、生產與產褥期 Other pregnancy, childbirth and the puerperium",,,,remainder of O00-O9A, 227 
+XVI,源於周產期的病況 Certain conditions originating in the perinatal period,,,,,P00-P96, 306 
+,,"妊娠週數不足及低出生體重有關的新生兒疾患，他處未歸類者  Disorders of newborn related to short gestation and low birth weight, not elsewhere classified",,,,P07, 40 
+,,其他源於周產期的病況 Other certain conditions originating in the perinatal period,,,,remainder of P00-P96, 282 
+XVII,"先天性畸形、變形與染色體異常 Congenital malformations, deformations and chromosomal abnormalities",,,,,Q00-Q99," 1,090 "
+XVIII,"症狀、徵候與臨床和實驗室的異常發現，他處未歸類者 Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",,,,,R00-R99," 45,046 "
+,,喉嚨痛與胸痛 Pain in throat and chest,,,,R07," 5,499 "
+,,腹痛及骨盆痛 Abdominal and pelvic pain,,,,R10," 9,163 "
+,,"身體不適 Illness, unspecified",,,,R69, 117 
+,,"其他症狀、徵候與臨床和實驗室的異常發現 Other symptoms, signs and abnormal clinical and laboratory findings",,,,remainder of R00-R99," 40,363 "
+XIX,"傷害、中毒與其它外因造成的特定影響 Injury, poisoning and certain other consequences of external causes",,,,,S00-T88," 27,683 "
+,,顱內損傷 Intracranial injury,,,,S06, 641 
+,,其他頭部損傷 Other injuries to the head,,,,"S00-S05, S07-S09"," 3,550 "
+,,前臂骨折 Fracture of forearm,,,,S52, 456 
+,,股骨骨折 Fracture of femur,,,,S72, 342 
+,,"小腿骨折，包含踝 Fracture of lower leg, including ankle",,,,S82, 414 
+,,其他損傷 Other injuries,,,,"S10-S51, S53-S71, S73-S81, S83-T14, T79"," 22,058 "
+,,燒傷和腐蝕 Burns and corrosions,,,,T20-T32, 804 
+,,"藥物、藥劑和生物物質之中毒、不良反應或劑量不足和主要為非醫藥源物質的毒性作用 Poisoning by, adverse effects of and underdosing of drugs, medicaments and biological substances and toxic effects of substances chiefly nonmedicinal as to source",,,,T36-T65, 435 
+,,潛水夫病[減壓症] Caisson disease [decompression sickness],,,,T70.3, 3 
+,,"內外科醫療照護之併發症，他處未歸類 Complications of surgical and medical care, not elsewhere classified",,,,T80-T88, 329 
+,,"其他傷害、中毒與其它外因造成的特定影響  Injury, poisoning and certain other consequences of external causes",,,,remainder of S00-T88," 3,961 "
+XX,導致罹病或致死之外因 External causes of morbidity ,,,,,V00-Y99," 2,460 "
+XXI,影響健康狀況及健康服務 Factors influencing health status and contact with health services,,,,,Z00-Z99," 37,770 "
+,,來院接受對疑似之疾病和狀況之觀察，已排除 Encounter for medical observation for suspected diseases and conditions ruled out,,,,Z03, 55 
+,,來院接受避孕指導處理 Encounter for contraceptive management,,,,Z30, 87 
+,,按生產場所及出生型態劃分之活產嬰兒 Liveborn infants according to place of birth and type of delivery,,,,Z38, 17 
+,,來院接受其他照護 Encounter for other aftercare,,,,Z51, 205 
+,,其他影響健康狀況及健康服務 Other factors influencing health status and contact with health services,,,,remainder of Z00-Z99," 37,633 "
+不詳 Unknown,,,,,,," 14,439 "

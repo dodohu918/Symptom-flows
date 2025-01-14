@@ -1,0 +1,33 @@
+generate a json file similar with the flow.json file above for me using this logic I provided here 
+Note1: if multiple choices in the same level, use multiple choice
+Note2: every node's name should start with number after the flow_, for example, if I want you to create a flow for flow_6handTremor.json, I want all the node to start with the number 6
+Note3: I don't need the find_clinic node and end node at the very end any more
+Note4: 2. if clinic has multiple choice, I want it to be this form:
+      "question": "建議您就診：1. XXX科，2. XXX科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "4_xxx_specialty",
+        "2": "4_xxx_specialty"}
+Note5: when the user have find the only subspecialty node, the node will always be like:
+{
+      "question": "建議科別：XXX科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+          "specialty": "(the abbreviation for the subspecialty)"
+        },
+      "nextIfYes": find_clinic
+      "nextIfNo": end
+    },
+Note6: for the abbreviation for the subspecialties, follow the rules of, 
+{ oph: Ophthalmology, er: Emergency, neuro: Neurology, fm: Family Medicine, derm: Dermatology,
+rheum: Rheumatology, ent: Ear, Nose, and Throat (ENT), ortho: Orthopedics, cm: Pulmonology, cv: Cardiology, 
+gi: Gastroenterology, psy: Psychology, gs: Surgery, uro: Urology, nephro: Nephrology, crs: Colorectal Surgery,
+obsgyn: Obsteric and gynecology, peds: pediatrics, hema: Hematology}
+Note7: the question of the start node will always start with exactly the this string "您提到{{SYMPTOM}}", like following:
+        "XXX_start": {
+        "question": "您提到{{SYMPTOM}}...",
+        ...
+        }
+Note8: give each node with a section "No", except for the node that has a section "meta" in it. Start with number after the flow_, follow by an underscore and the number of the node within the nodes.
+Note9: give me a json file name to this flow at the start

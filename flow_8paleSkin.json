@@ -1,0 +1,102 @@
+{
+  "nodes": {
+    "8_paleSkin_start": {
+      "No": "8_1",
+      "question": "您提到皮膚慘白。請問情況是全身性的還是局部性的？(1=全身性, 2=局部性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "8_general_pale_skin",
+        "2": "8_local_pale_skin"
+      }
+    },
+    "8_general_pale_skin": {
+      "No": "8_2",
+      "question": "請問這是急性發生的嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "8_er_specialty",
+      "nextIfNo": "8_weight_loss_check"
+    },
+    "8_weight_loss_check": {
+      "No": "8_3",
+      "question": "是否有體重減輕？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "8_other_symptoms_check",
+      "nextIfNo": "8_fm_specialty"
+    },
+    "8_other_symptoms_check": {
+      "No": "8_4",
+      "question": "是否有其他症狀？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "greeting",
+      "nextIfNo": "8_fm_specialty"
+    },
+    "8_local_pale_skin": {
+      "No": "8_5",
+      "question": "是否因寒冷引起？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "8_frostbite_check",
+      "nextIfNo": "8_peripheral_symptoms_check"
+    },
+    "8_frostbite_check": {
+      "No": "8_6",
+      "question": "是否有凍傷？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "8_er_specialty",
+      "nextIfNo": "8_rheumatology_specialty"
+    },
+    "8_peripheral_symptoms_check": {
+      "No": "8_7",
+      "question": "是否合併周邊四肢脈搏下降或疼痛？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "8_er_specialty",
+      "nextIfNo": "8_dermatology_rheumatology_choice"
+    },
+    "8_dermatology_rheumatology_choice": {
+      "No": "8_8",
+      "question": "建議您就診：1. 皮膚科，2. 風濕免疫科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "8_dermatology_specialty",
+        "2": "8_rheumatology_specialty"
+      }
+    },
+    "8_er_specialty": {
+      "question": "建議科別：急診。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "er"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "8_fm_specialty": {
+      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "8_dermatology_specialty": {
+      "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "derm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "8_rheumatology_specialty": {
+      "question": "建議科別：風濕免疫科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "rheum"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

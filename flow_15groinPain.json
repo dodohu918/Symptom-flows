@@ -1,0 +1,62 @@
+{
+  "nodes": {
+    "15_groinPain_start": {
+      "No": "15_1",
+      "question": "您提到{{SYMPTOM}}。請問是否有外傷？(1=是, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "15_er_specialty",
+      "nextIfNo": "15_numbness_check"
+    },
+    "15_numbness_check": {
+      "No": "15_2",
+      "question": "有沒有麻木或是感覺異常？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "15_ortho_specialty",
+      "nextIfNo": "15_overuse_check"
+    },
+    "15_overuse_check": {
+      "No": "15_3",
+      "question": "是否過度使用鼠蹊部關節？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "15_ortho_rheum_choice",
+      "nextIfNo": "15_ortho_specialty"
+    },
+    "15_ortho_rheum_choice": {
+      "No": "15_4",
+      "question": "建議您就診：1. 骨科，2. 風濕免疫科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "15_ortho_specialty",
+        "2": "15_rheum_specialty"
+      }
+    },
+    "15_er_specialty": {
+      "question": "建議科別：急診。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "er"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "15_ortho_specialty": {
+      "question": "建議科別：骨科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ortho"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "15_rheum_specialty": {
+      "question": "建議科別：風濕免疫科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "rheum"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

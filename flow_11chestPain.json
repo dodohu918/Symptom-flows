@@ -1,0 +1,104 @@
+{
+  "nodes": {
+    "11_chestPain_start": {
+      "No": "11_1",
+      "question": "您提到{{SYMPTOM}}。請問以下哪一種情況最符合？\n1. 前胸痛到後背\n2. 頸部靜脈擴張\n3. 胸口悶痛像是有重物壓在胸口上面\n4. 合併咳嗽、痰等呼吸道症狀\n5. 每次吃完食物就會發作\n6. 胸口或背部有皮膚水泡等病灶\n7. 有外傷後, 會因為姿勢改變而疼痛",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3", "4", "5", "6", "7"],
+      "next": {
+        "1": "11_er_specialty",
+        "2": "11_cardiology_specialty",
+        "3": "11_er_cardiology_choice",
+        "4": "11_pulmonology_cardiology_choice",
+        "5": "11_gastro_pulmonology_choice",
+        "6": "11_dermatology_pulmonology_choice",
+        "7": "11_er_specialty"
+      }
+    },
+    "11_er_specialty": {
+      "question": "建議科別：急診。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "er"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "11_cardiology_specialty": {
+      "question": "建議科別：心臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cv"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "11_er_cardiology_choice": {
+      "No": "11_2",
+      "question": "建議您就診：1. 急診，2. 心臟內科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "11_er_specialty",
+        "2": "11_cardiology_specialty"
+      }
+    },
+    "11_pulmonology_cardiology_choice": {
+      "No": "11_3",
+      "question": "建議您就診：1. 胸腔內科，2. 心臟內科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "11_pulmonology_specialty",
+        "2": "11_cardiology_specialty"
+      }
+    },
+    "11_gastro_pulmonology_choice": {
+      "No": "11_4",
+      "question": "建議您就診：1. 腸胃內科，2. 胸腔內科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "11_gastroenterology_specialty",
+        "2": "11_pulmonology_specialty"
+      }
+    },
+    "11_dermatology_pulmonology_choice": {
+      "No": "11_5",
+      "question": "建議您就診：1. 胸腔內科，2. 皮膚科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "11_pulmonology_specialty",
+        "2": "11_dermatology_specialty"
+      }
+    },
+    "11_pulmonology_specialty": {
+      "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "11_gastroenterology_specialty": {
+      "question": "建議科別：腸胃內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "gi"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "11_dermatology_specialty": {
+      "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "derm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "nodes": {
+    "16_rectalBleeding_start": {
+      "No": "16_1",
+      "question": "您提到{{SYMPTOM}}。請問您的年紀是否在40歲以下？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "16_colorectal_specialty",
+      "nextIfNo": "16_colorectal_gastro_choice"
+    },
+    "16_colorectal_specialty": {
+      "question": "建議科別：大腸直腸外科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "crs"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "16_colorectal_gastro_choice": {
+      "No": "16_2",
+      "question": "建議您就診：1. 大腸直腸外科，2. 腸胃科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "16_colorectal_specialty",
+        "2": "16_gastro_specialty"
+      }
+    },
+    "16_gastro_specialty": {
+      "question": "建議科別：腸胃科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "gi"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

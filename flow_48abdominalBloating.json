@@ -1,0 +1,14 @@
+{
+    "nodes": {
+      "48_abdominalBloating_start": {
+        "question": "您提到{{SYMPTOM}}。建議科別：腸胃內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "gi"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  

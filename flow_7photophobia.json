@@ -1,0 +1,67 @@
+{
+  "nodes": {
+    "7_photophobia_start": {
+      "No": "7_1",
+      "question": "您提到畏光。請問是否有以下眼睛症狀？包括眼睛紅腫、視力模糊或缺損、或眼部手術病史？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "7_ophthalmology_specialty",
+      "nextIfNo": "7_fever_or_neck_stiffness"
+    },
+  
+    "7_ophthalmology_specialty": {
+      "question": "建議科別：眼科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "oph"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+  
+    "7_fever_or_neck_stiffness": {
+      "No": "7_2",
+      "question": "是否合併以下症狀？包括發燒、頸部僵硬、意識狀態改變或頭痛？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "7_emergency_specialty",
+      "nextIfNo": "7_migraine_symptoms"
+    },
+  
+    "7_emergency_specialty": {
+      "question": "建議科別：急診。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "er"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+  
+    "7_migraine_symptoms": {
+      "No": "7_3",
+      "question": "是否有以下症狀？包括搏動性頭痛、噁心、太陽穴痛、視線中出現閃光，或家族中有偏頭痛病史？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "7_neurology_specialty",
+      "nextIfNo": "7_family_medicine_specialty"
+    },
+  
+    "7_neurology_specialty": {
+      "question": "建議科別：神經內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "neuro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+  
+    "7_family_medicine_specialty": {
+      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

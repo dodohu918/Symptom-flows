@@ -1,0 +1,136 @@
+{
+  "nodes": {
+    "13_upperLimbPain_start": {
+      "No": "13_1",
+      "question": "您提到{{SYMPTOM}}。請問有沒有相關的外傷？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "13_er_specialty",
+      "nextIfNo": "13_red_swelling_pain"
+    },
+    "13_red_swelling_pain": {
+      "No": "13_2",
+      "question": "有沒有紅腫熱痛？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "13_open_wound",
+      "nextIfNo": "13_chest_pain_sweating"
+    },
+    "13_open_wound": {
+      "No": "13_3",
+      "question": "有沒有傷口？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "13_er_surgery_choice",
+      "nextIfNo": "13_rheum_fm_choice"
+    },
+    "13_chest_pain_sweating": {
+      "No": "13_4",
+      "question": "是否同時合併胸悶痛或冒冷汗？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "13_er_cv_choice",
+      "nextIfNo": "13_ortho_rheum_rehab_choice"
+    },
+    "13_er_surgery_choice": {
+      "No": "13_5",
+      "question": "建議您就診：1. 急診，2. 外科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "13_er_specialty",
+        "2": "13_surgery_specialty"
+      }
+    },
+    "13_rheum_fm_choice": {
+      "No": "13_6",
+      "question": "建議您就診：1. 風濕免疫科，2. 家庭醫學科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "13_rheum_specialty",
+        "2": "13_fm_specialty"
+      }
+    },
+    "13_er_cv_choice": {
+      "No": "13_7",
+      "question": "建議您就診：1. 急診，2. 心臟內科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "13_er_specialty",
+        "2": "13_cv_specialty"
+      }
+    },
+    "13_ortho_rheum_rehab_choice": {
+      "No": "13_8",
+      "question": "建議您就診：1. 骨科，2. 風濕免疫科，3. 復健科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3"],
+      "next": {
+        "1": "13_ortho_specialty",
+        "2": "13_rheum_specialty",
+        "3": "13_rehab_specialty"
+      }
+    },
+    "13_er_specialty": {
+      "question": "建議科別：急診。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "er"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "13_surgery_specialty": {
+      "question": "建議科別：外科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "gs"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "13_rheum_specialty": {
+      "question": "建議科別：風濕免疫科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "rheum"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "13_fm_specialty": {
+      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "13_cv_specialty": {
+      "question": "建議科別：心臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cv"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "13_ortho_specialty": {
+      "question": "建議科別：骨科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ortho"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "13_rehab_specialty": {
+      "question": "建議科別：復健科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "rehab"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

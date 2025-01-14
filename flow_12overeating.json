@@ -1,0 +1,52 @@
+{
+  "nodes": {
+    "12_overeating_start": {
+      "No": "12_1",
+      "question": "您提到{{SYMPTOM}}。請問以下哪一種情況最符合？\n1. 是否有使用以下藥物: 類固醇、抗憂鬱藥物或其他慢性藥物\n2. 合併吃多、喝多、尿多、飲食減輕等症狀\n3. 是否有心情憂鬱狀態",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3"],
+      "next": {
+        "1": "12_medication_fm_choice",
+        "2": "12_endocrine_specialty",
+        "3": "12_psy_specialty"
+      }
+    },
+    "12_medication_fm_choice": {
+      "No": "12_2",
+      "question": "建議您就診：1. 請洽詢開立該藥物的醫師 或是 2. 家庭醫學科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "end",
+        "2": "12_fm_specialty"
+      }
+    },
+    "12_endocrine_specialty": {
+      "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "endocrine"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "12_psy_specialty": {
+      "question": "建議科別：身心科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "psy"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "12_fm_specialty": {
+      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

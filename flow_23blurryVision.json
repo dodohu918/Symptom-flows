@@ -1,0 +1,14 @@
+{
+    "nodes": {
+      "23_blurryVision_start": {
+        "question": "您提到{{SYMPTOM}}。建議科別：眼科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "oph"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  

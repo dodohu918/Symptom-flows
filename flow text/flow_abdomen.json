@@ -1,0 +1,98 @@
+{
+    "nodes": {
+      "abdomen_start": {
+        "question": "您提到{{SYMPTOM}}。這是急性腹痛（突然且嚴重）嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "abdomen_acute",
+        "nextIfNo": "abdomen_diffuse" 
+      },
+      "abdomen_acute": {
+        "question": "這種疼痛是局部的還是整個腹部擴散的？（1 = 局部, 2 = 整個腹部）",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "abdomen_localized",
+          "2": "abdomen_diffuse"
+        }
+      },
+      "abdomen_localized": {
+        "question": "最痛的是哪個部位？（1 = 左上部, 2 = 左下部, 3 = 右上部, 4 = 右下部）",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3", "4"],
+        "next": {
+          "1": "left_upper_followup",
+          "2": "left_lower_followup",
+          "3": "right_upper_followup",
+          "4": "right_lower_followup"
+        }
+      },
+      "left_upper_followup": {
+        "question": "您是否同時有胸痛的症狀？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "cardiology_specialty",
+        "nextIfNo": "thoracic_specialty"
+      },
+      "right_lower_followup": {
+        "question": "您有沒有噁心或嘔吐的情況？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "gastro_specialty",
+        "nextIfNo": "colorectal_specialty"
+      },
+      "left_lower_followup": {
+        "question": "您的排便習慣有沒有改變？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "colorectal_specialty",
+        "nextIfNo": "gastro_specialty"
+      },
+      "right_upper_followup": {
+        "question": "您的疼痛有沒有放射到背部？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "thoracic_specialty",
+        "nextIfNo": "gastro_specialty"
+      },
+      "abdomen_diffuse": {
+        "question": "您的糞便中有血嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "colorectal_specialty",
+        "nextIfNo": "nephrology_specialty"
+      },
+    
+      "colorectal_specialty": {
+        "question": "建議科別：大腸直腸外科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "crs"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "cardiology_specialty": {
+        "question": "建議科別：胃腸科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "gi"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "gastro_specialty": {
+        "question": "建議科別：胃腸科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "gi"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "thoracic_specialty": {
+        "question": "建議科別：胃腸科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "gi"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  

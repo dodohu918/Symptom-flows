@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "20_foreignBodySensationThroat_start": {
+      "No": "20_1",
+      "question": "您提到{{SYMPTOM}}。請問以下哪一種情況最符合？\n1. 有服用煙/酒精/檳榔病史\n2. 容易胃食道逆流\n3. 容易鼻涕倒流",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3"],
+      "next": {
+        "1": "20_ent_specialty",
+        "2": "20_ent_gastro_choice",
+        "3": "20_ent_specialty"
+      }
+    },
+    "20_ent_specialty": {
+      "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ent"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "20_ent_gastro_choice": {
+      "No": "20_2",
+      "question": "建議您就診：1. 耳鼻喉科，2. 腸胃科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "20_ent_specialty",
+        "2": "20_gastro_specialty"
+      }
+    },
+    "20_gastro_specialty": {
+      "question": "建議科別：腸胃科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "gi"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

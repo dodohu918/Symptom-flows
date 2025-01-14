@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "36_joint_start": {
+      "No": "36_1",
+      "question": "您提到{{SYMPTOM}}。您經歷的是骨關節相關的疼痛嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "36_joint_bonepain",
+      "nextIfNo": "36_joint_end"
+    },
+    "36_joint_bonepain": {
+      "No": "36_2",
+      "question": "有多少個關節受到影響？（1 = 單一, 2 = 少數, 3 = 多個）",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3"],
+      "optionLabels": {
+        "1": "單一",
+        "2": "少數",
+        "3": "多個"
+      },
+      "next": {
+        "1": "36_rheum_immuno_specialty",
+        "2": "36_rheum_immuno_specialty",
+        "3": "36_rheum_immuno_specialty"
+      }
+    },
+    "36_joint_end": {
+      "No": "36_3",
+      "question": "如果不是骨關節相關的疼痛，建議您更詳細描述或尋求一般科醫師的協助。您想要重新開始嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "greeting",
+      "nextIfNo": "end"
+    },
+    "36_rheum_immuno_specialty": {
+      "question": "建議科別：風濕免疫科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "rheum"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

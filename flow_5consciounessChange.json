@@ -1,0 +1,14 @@
+{
+    "nodes": {
+      "5_consciousnessChange_start": {
+        "question": "您提到意識狀態改變。建議科別：急診。需要我幫您找到最近的急診嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "er"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  
