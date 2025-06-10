@@ -1,52 +1,63 @@
 {
   "nodes": {
-    "2_RLS_start": {
-      "No": "2_1",
-      "question": "您提到下肢有奇怪的感覺。請問最近有沒有服用抗組織胺、鋰鹽或其他身心科相關藥物？(1=有, 2=沒有)",
+    "2_lowerLimbWeirdFeeling_start": {
+      "No": "1_1",
+      "question": "您提到{{SYMPTOM}}。請問最近有沒有使用抗組織胺、鋰鹽或其他身心科類的藥物？(1=有, 2=沒有)",
       "type": "yes_no",
-      "nextIfYes": "2_drug_discussion",
-      "nextIfNo": "2_pregnancy_check"
+      "nextIfYes": "1_drug_discussion",
+      "nextIfNo": "1_gender_check"
     },
-  
+
     "2_drug_discussion": {
-      "No": "2_2",
-      "question": "建議您和開立該藥物的醫師討論，或就診家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
-      "type": "yes_no",
-      "nextIfYes": "2_find_clinic_fm",
-      "nextIfNo": "end"
-    },
-  
-    "2_pregnancy_check": {
-      "No": "2_3",
-      "question": "您是否為女性且懷孕或有懷孕的可能？(1=是, 2=否)",
-      "type": "yes_no",
-      "nextIfYes": "2_gyn_specialty",
-      "nextIfNo": "2_final_choice"
-    },
-  
-    "2_gyn_specialty": {
-      "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "No": "1_2",
+      "question": "建議您和開立該藥物的醫師討論，或考慮就診家庭醫學科。需要我幫您找到最近的家醫科診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
-        "specialty": "obsgyn"
+        "specialty": "fm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "2_get_gender",
       "nextIfNo": "end"
     },
-  
-    "2_final_choice": {
-      "No": "2_4",
-      "question": "請選擇最符合的情形：\n1. 您是否有嚴重腎臟疾病？\n2. 您是否有手部顫抖、僵硬、動作緩慢等症狀？\n3. 您是否有其他慢性疾病(如貧血)的病史？",
+    "2_gender_check": {
+      "No": "1_3",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "1_male_symptoms",
+        "2": "1_pregnancy_check"
+      }
+    },
+    "2_male_symptoms": {
+      "No": "1_4",
+      "question": "請選擇最符合的情形：\n1. 嚴重腎臟疾病\n2. 手部顫抖、僵硬、動作緩慢\n3. 其他慢性疾病如貧血等",
       "type": "multiple_choice",
       "options": ["1", "2", "3"],
       "next": {
-        "1": "2_find_clinic_nephro",
-        "2": "2_find_clinic_neuro",
-        "3": "2_find_clinic_fm"
+        "1": "1_nephrology_specialty",
+        "2": "1_neurology_specialty",
+        "3": "1_family_medicine_specialty"
       }
     },
-
-    "2_find_clinic_nephro": {
+    "2_pregnancy_check": {
+      "No": "1_5",
+      "question": "您是否懷孕或有懷孕的可能性？(1=是, 2=否)",
+      "type": "yes_no",
+      "nextIfYes": "1_obgyn_specialty",
+      "nextIfNo": "1_female_symptoms"
+    },
+    "2_female_symptoms": {
+      "No": "1_6",
+      "question": "請選擇最符合的情形：\n1. 嚴重腎臟疾病\n2. 手部顫抖、僵硬、動作緩慢\n3. 其他慢性疾病如貧血等",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3"],
+      "next": {
+        "1": "1_nephrology_specialty",
+        "2": "1_neurology_specialty",
+        "3": "1_family_medicine_specialty"
+      }
+    },
+    "2_nephrology_specialty": {
       "question": "建議科別：腎臟科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
@@ -55,8 +66,7 @@
       "nextIfYes": "find_clinic",
       "nextIfNo": "end"
     },
-  
-    "2_find_clinic_neuro": {
+    "2_neurology_specialty": {
       "question": "建議科別：神經內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
@@ -65,8 +75,7 @@
       "nextIfYes": "find_clinic",
       "nextIfNo": "end"
     },
-  
-    "2_find_clinic_fm": {
+    "2_family_medicine_specialty": {
       "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
@@ -74,6 +83,25 @@
       },
       "nextIfYes": "find_clinic",
       "nextIfNo": "end"
+    },
+    "2_obgyn_specialty": {
+      "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "obsgyn"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "2_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

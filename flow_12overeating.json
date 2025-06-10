@@ -13,13 +13,13 @@
     },
     "12_medication_fm_choice": {
       "No": "12_2",
-      "question": "建議您就診：1. 請洽詢開立該藥物的醫師 或是 2. 家庭醫學科。請選擇要前往的科別？",
-      "type": "multiple_choice",
-      "options": ["1", "2"],
-      "next": {
-        "1": "end",
-        "2": "12_fm_specialty"
-      }
+      "question": "建議您就診：1. 請洽詢開立該藥物的醫師 或是 2. 家庭醫學科。需要我幫您找到最近的家醫科診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "12_get_gender",
+      "nextIfNo": "end"
     },
     "12_endocrine_specialty": {
       "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
@@ -27,7 +27,7 @@
       "meta": {
         "specialty": "endocrine"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "12_get_gender",
       "nextIfNo": "end"
     },
     "12_psy_specialty": {
@@ -36,7 +36,7 @@
       "meta": {
         "specialty": "psy"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "12_get_gender",
       "nextIfNo": "end"
     },
     "12_fm_specialty": {
@@ -45,8 +45,18 @@
       "meta": {
         "specialty": "fm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "12_get_gender",
       "nextIfNo": "end"
+    },
+    "12_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

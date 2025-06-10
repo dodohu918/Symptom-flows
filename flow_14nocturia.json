@@ -8,12 +8,12 @@
       "nextIfNo": "14_medication_check"
     },
     "14_reduce_intake": {
-      "question": "建議您考慮減少咖啡因或酒精的飲用，以改善夜尿問題。或是您可以考慮家庭醫學科醫師進一步評估。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "question": "建議您考慮減少咖啡因或酒精的飲用，以改善夜尿問題。或是您可以考慮家庭醫學科醫師進一步評估。需要我幫您找到最近的家醫科診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
         "specialty": "fm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "14_get_gender",
       "nextIfNo": "end"
     },
     "14_medication_check": {
@@ -24,12 +24,12 @@
       "nextIfNo": "14_symptoms_check"
     },
     "14_medication_discussion": {
-      "question": "建議您和開立該藥物的醫師討論，或考慮家庭醫學科醫師進一步評估。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "question": "建議您和開立該藥物的醫師討論，或考慮家庭醫學科醫師進一步評估。需要我幫您找到最近的家醫科診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
         "specialty": "fm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "14_get_gender",
       "nextIfNo": "end"
     },
     "14_symptoms_check": {
@@ -52,7 +52,7 @@
       "meta": {
         "specialty": "uro"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "14_get_gender",
       "nextIfNo": "end"
     },
     "14_cv_specialty": {
@@ -61,7 +61,7 @@
       "meta": {
         "specialty": "cv"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "14_get_gender",
       "nextIfNo": "end"
     },
     "14_cm_ent_choice": {
@@ -74,31 +74,13 @@
         "2": "14_ent_specialty"
       }
     },
-    "14_endocrine_specialty": {
-      "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
-      "type": "yes_no",
-      "meta": {
-        "specialty": "endocrine"
-      },
-      "nextIfYes": "find_clinic",
-      "nextIfNo": "end"
-    },
-    "14_nephrology_specialty": {
-      "question": "建議科別：腎臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
-      "type": "yes_no",
-      "meta": {
-        "specialty": "nephro"
-      },
-      "nextIfYes": "find_clinic",
-      "nextIfNo": "end"
-    },
     "14_pulmonology_specialty": {
       "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
         "specialty": "cm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "14_get_gender",
       "nextIfNo": "end"
     },
     "14_ent_specialty": {
@@ -107,17 +89,36 @@
       "meta": {
         "specialty": "ent"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "14_get_gender",
       "nextIfNo": "end"
     },
-    "14_fm_specialty": {
-      "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+    "14_endocrine_specialty": {
+      "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
-        "specialty": "fm"
+        "specialty": "endocrine"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "14_get_gender",
       "nextIfNo": "end"
+    },
+    "14_nephrology_specialty": {
+      "question": "建議科別：腎臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "nephro"
+      },
+      "nextIfYes": "14_get_gender",
+      "nextIfNo": "end"
+    },
+    "14_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

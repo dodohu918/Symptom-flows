@@ -2,7 +2,7 @@
   "nodes": {
     "6_handTremor_start": {
       "No": "6_1",
-      "question": "您提到手抖。請問您有沒有飲酒史？(1=有, 2=沒有)",
+      "question": "您提到{{SYMPTOM}}。請問您有沒有飲酒史？(1=有, 2=沒有)",
       "type": "yes_no",
       "nextIfYes": "6_alcohol_choice",
       "nextIfNo": "6_alcohol_choice"
@@ -43,7 +43,7 @@
       "meta": {
         "specialty": "neuro"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "6_get_gender",
       "nextIfNo": "end"
     },
     "6_family_medicine_specialty": {
@@ -52,7 +52,7 @@
       "meta": {
         "specialty": "fm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "6_get_gender",
       "nextIfNo": "end"
     },
     "6_endocrine_specialty": {
@@ -61,7 +61,7 @@
       "meta": {
         "specialty": "endocrine"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "6_get_gender",
       "nextIfNo": "end"
     },
     "6_ent_specialty": {
@@ -70,8 +70,18 @@
       "meta": {
         "specialty": "ent"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "6_get_gender",
       "nextIfNo": "end"
+    },
+    "6_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

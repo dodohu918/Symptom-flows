@@ -1,0 +1,9 @@
+皮膚乾燥
+    - 有沒有皮膚的病灶？
+        - 有
+            - 年齡超過18歲 -> 皮膚科
+            - 年齡未超過18歲 -> 小兒科, 皮膚科
+        - 沒有 -> 皮膚科
+
+
+https://www.grepmed.com/images/8469/pruritus-secondary-differential-diagnosis-causes

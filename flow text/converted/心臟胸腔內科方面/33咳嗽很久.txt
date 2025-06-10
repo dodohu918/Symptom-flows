@@ -1,0 +1,11 @@
+咳嗽
+    - 不到2個月的時間
+        - 合併有胸悶痛 或 冒冷汗 或 過去有氣喘或慢性阻塞性肺病現在發作很不舒服 或 其他急性症狀-> 急診
+        - 無嚴重不適 -> 胸腔內科
+    - 超過兩個月 -> 胸腔內科, 腸胃內科
+
+
+
+
+    Acute cough: https://coughjournal.biomedcentral.com/articles/10.1186/1745-9974-5-11
+    Chronic cough: https://www.grepmed.com/images/10546/differential-causes-algorithm-chronic-diagnosis

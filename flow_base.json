@@ -128,17 +128,13 @@
       "No": "0_9",
       "question": "請輸入您的年齡：",
       "type": "open-ended",
-      "next": "get_gender"
+      "next": "get_duration"
     },
-    "get_gender": {
-      "No": "0_10",
-      "question": "請輸入您的性別：（1 = 男性, 2 = 女性）",
-      "type": "multiple_choice",
-      "options": ["1", "2"],
-      "next": {
-        "1": "get_pasthistory",
-        "2": "get_pasthistory"
-      }
+    "get_duration": {
+      "No": "0_12",
+      "question": "請問您的症狀已經持續了多久？（例如：3天、1週、1個月）",
+      "type": "open-ended",
+      "next": "get_pasthistory"
     },
     "get_pasthistory": {
       "No": "0_11",

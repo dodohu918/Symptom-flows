@@ -1,0 +1,92 @@
+{
+    "nodes": {
+      "72_nightSweats_start": {
+        "No": "72_1",
+        "question": "您提到{{SYMPTOM}}。請問是否有慢性用藥病史？(1=有, 2=沒有)",
+        "type": "yes_no",
+        "nextIfYes": "72_fm_consult",
+        "nextIfNo": "72_gender_check"
+      },
+      "72_fm_consult": {
+        "No": "72_2",
+        "question": "建議您和開立該藥物的醫師討論，或考慮家庭醫學科進一步評估，需要幫您找最近的家醫科診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "72_get_gender",
+        "nextIfNo": "end"
+      },
+      "72_gender_check": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "72_male_symptoms",
+          "2": "72_female_symptoms"
+        }
+      },
+      "72_male_symptoms": {
+        "No": "72_3",
+        "question": "請問以下哪一種情況最符合？\n1. 吃多、喝多、尿多且體重減輕症狀\n2. 合併心悸、體重減輕等症狀\n3. 合併胸痛、心悸等症狀",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3"],
+        "next": {
+          "1": "72_endocrine_specialty",
+          "2": "72_endocrine_specialty",
+          "3": "72_cardiology_specialty"
+        }
+      },
+      "72_female_symptoms": {
+        "No": "72_4",
+        "question": "請問以下哪一種情況最符合？\n1. 年齡約莫45~50歲左右\n2. 吃多、喝多、尿多且體重減輕症狀\n3. 合併心悸、體重減輕等症狀\n4. 合併胸痛、心悸等症狀",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3", "4"],
+        "next": {
+          "1": "72_obgyn_specialty",
+          "2": "72_endocrine_specialty",
+          "3": "72_endocrine_specialty",
+          "4": "72_cardiology_specialty"
+        }
+      },
+      "72_obgyn_specialty": {
+        "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "obsgyn"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "72_endocrine_specialty": {
+        "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "endocrine"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "72_cardiology_specialty": {
+        "question": "建議科別：心臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "cv"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "72_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

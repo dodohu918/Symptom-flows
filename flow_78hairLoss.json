@@ -1,0 +1,43 @@
+{
+    "nodes": {
+      "78_hairLoss_start": {
+        "No": "78_1",
+        "question": "您提到{{SYMPTOM}}。建議您就診：1. 皮膚科，2. 內分泌科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "78_dermatology_specialty",
+          "2": "78_endocrine_specialty"
+        }
+      },
+      "78_dermatology_specialty": {
+        "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "derm"
+        },
+        "nextIfYes": "78_get_gender",
+        "nextIfNo": "end"
+      },
+      "78_endocrine_specialty": {
+        "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "endocrine"
+        },
+        "nextIfYes": "78_get_gender",
+        "nextIfNo": "end"
+      },
+      "78_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

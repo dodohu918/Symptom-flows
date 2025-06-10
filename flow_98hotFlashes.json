@@ -1,0 +1,15 @@
+{
+    "nodes": {
+      "98_hotFlashes_start": {
+        "No": "98_1",
+        "question": "您提到{{SYMPTOM}}。建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "obsgyn"
+        },
+        "nextIfYes": "98_get_gender",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  

@@ -1,0 +1,15 @@
+{
+    "nodes": {
+      "84_testicularPain_start": {
+        "No": "84_1",
+        "question": "您提到{{SYMPTOM}}。建議科別：泌尿科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "uro"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      }
+    }
+  }
+  

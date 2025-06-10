@@ -1,14 +1,42 @@
 {
-    "nodes": {
-      "31_doubleVision_start": {
-        "question": "您提到{{SYMPTOM}}。建議科別：眼科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
-        "type": "yes_no",
-        "meta": {
-          "specialty": "oph"
-        },
-        "nextIfYes": "find_clinic",
-        "nextIfNo": "end"
+  "nodes": {
+    "31_doubleVision_start": {
+      "No": "31_1",
+      "question": "您提到{{SYMPTOM}}。建議您就診：1. 眼科，2. 神經內科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "31_ophthalmology_specialty",
+        "2": "31_neurology_specialty"
+      }
+    },
+    "31_ophthalmology_specialty": {
+      "question": "建議科別：眼科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "oph"
+      },
+      "nextIfYes": "31_get_gender",
+      "nextIfNo": "end"
+    },
+    "31_neurology_specialty": {
+      "question": "建議科別：神經內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "neuro"
+      },
+      "nextIfYes": "31_get_gender",
+      "nextIfNo": "end"
+    },
+    "31_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
       }
     }
   }
-  
+}

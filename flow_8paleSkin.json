@@ -2,7 +2,7 @@
   "nodes": {
     "8_paleSkin_start": {
       "No": "8_1",
-      "question": "您提到皮膚慘白。請問情況是全身性的還是局部性的？(1=全身性, 2=局部性)",
+      "question": "您提到{{SYMPTOM}}。請問情況是全身性的還是局部性的？(1=全身性, 2=局部性)",
       "type": "multiple_choice",
       "options": ["1", "2"],
       "next": {
@@ -68,7 +68,7 @@
       "meta": {
         "specialty": "er"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "8_get_gender",
       "nextIfNo": "end"
     },
     "8_fm_specialty": {
@@ -77,7 +77,7 @@
       "meta": {
         "specialty": "fm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "8_get_gender",
       "nextIfNo": "end"
     },
     "8_dermatology_specialty": {
@@ -86,7 +86,7 @@
       "meta": {
         "specialty": "derm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "8_get_gender",
       "nextIfNo": "end"
     },
     "8_rheumatology_specialty": {
@@ -95,8 +95,18 @@
       "meta": {
         "specialty": "rheum"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "8_get_gender",
       "nextIfNo": "end"
+    },
+    "8_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

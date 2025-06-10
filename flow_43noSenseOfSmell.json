@@ -1,14 +1,25 @@
 {
-    "nodes": {
-      "43_noSenseOfSmell_start": {
-        "question": "您提到{{SYMPTOM}}。建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
-        "type": "yes_no",
-        "meta": {
-          "specialty": "ent"
-        },
-        "nextIfYes": "find_clinic",
-        "nextIfNo": "end"
+  "nodes": {
+    "43_noSenseOfSmell_start": {
+      "No": "43_1",
+      "question": "您提到{{SYMPTOM}}。建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ent"
+      },
+      "nextIfYes": "43_get_gender",
+      "nextIfNo": "end"
+    },
+    "43_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
       }
     }
   }
+}
   

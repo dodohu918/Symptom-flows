@@ -1,0 +1,53 @@
+{
+    "nodes": {
+      "86_hypertension_start": {
+        "No": "86_1",
+        "question": "您提到{{SYMPTOM}}。建議您就診：1. 心臟內科，2. 內分泌科，3. 家庭醫學科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3"],
+        "next": {
+          "1": "86_cardiology_specialty",
+          "2": "86_endocrine_specialty",
+          "3": "86_family_medicine_specialty"
+        }
+      },
+      "86_cardiology_specialty": {
+        "question": "建議科別：心臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "cv"
+        },
+        "nextIfYes": "86_get_gender",
+        "nextIfNo": "end"
+      },
+      "86_endocrine_specialty": {
+        "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "endocrine"
+        },
+        "nextIfYes": "86_get_gender",
+        "nextIfNo": "end"
+      },
+      "86_family_medicine_specialty": {
+        "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "86_get_gender",
+        "nextIfNo": "end"
+      },
+      "86_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

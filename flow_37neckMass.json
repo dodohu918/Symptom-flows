@@ -2,7 +2,7 @@
   "nodes": {
     "37_neck_mass_start": {
       "No": "37_1",
-      "question": "請問您的情況是：1) 身上有多處腫塊，或 2) 只有頸部腫塊？(1=多處, 2=只有頸部)",
+      "question": "您提到{{SYMPTOM}}。請問您的情況是：1) 身上有多處腫塊，或 2) 只有頸部腫塊？(1=多處, 2=只有頸部)",
       "type": "multiple_choice",
       "options": ["1", "2"],
       "next": {
@@ -27,7 +27,7 @@
       "meta": {
         "specialty": "infection"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "37_get_gender",
       "nextIfNo": "end"
     },
     "37_blood_tumor_specialty": {
@@ -36,7 +36,7 @@
       "meta": {
         "specialty": "hema"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "37_get_gender",
       "nextIfNo": "end"
     },
     "37_no_specific_symptom": {
@@ -45,7 +45,7 @@
       "meta": {
         "specialty": "ent"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "37_get_gender",
       "nextIfNo": "end"
     },
     "37_single_neck_only": {
@@ -68,7 +68,7 @@
       "meta": {
         "specialty": "endocrine"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "37_get_gender",
       "nextIfNo": "end"
     },
     "37_ent_specialty": {
@@ -77,8 +77,18 @@
       "meta": {
         "specialty": "ent"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "37_get_gender",
       "nextIfNo": "end"
+    },
+    "37_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

@@ -1,0 +1,43 @@
+{
+    "nodes": {
+      "82_decreasedUrineOutput_start": {
+        "No": "82_1",
+        "question": "您提到{{SYMPTOM}}。建議您就診：1. 腎臟內科，2. 家庭醫學科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "82_nephrology_specialty",
+          "2": "82_family_medicine_specialty"
+        }
+      },
+      "82_nephrology_specialty": {
+        "question": "建議科別：腎臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "nephro"
+        },
+        "nextIfYes": "82_get_gender",
+        "nextIfNo": "end"
+      },
+      "82_family_medicine_specialty": {
+        "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "82_get_gender",
+        "nextIfNo": "end"
+      },
+      "82_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

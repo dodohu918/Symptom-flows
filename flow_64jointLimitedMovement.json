@@ -1,0 +1,53 @@
+{
+    "nodes": {
+      "64_jointLimitedMovement_start": {
+        "No": "64_1",
+        "question": "您提到{{SYMPTOM}}。請問受影響的關節情況是？(1=單一關節受影響, 2=多個關節受影響)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "64_single_joint_check",
+          "2": "64_rheum_specialty"
+        }
+      },
+      "64_single_joint_check": {
+        "No": "64_2",
+        "question": "單一關節受影響，請問以下哪一種情況最符合？\n1. 高尿酸病史/ 大腳趾\n2. 常使用的關節受影響",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "64_rheum_specialty",
+          "2": "64_ortho_specialty"
+        }
+      },
+      "64_rheum_specialty": {
+        "question": "建議科別：風濕免疫科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "rheum"
+        },
+        "nextIfYes": "64_get_gender",
+        "nextIfNo": "end"
+      },
+      "64_ortho_specialty": {
+        "question": "建議科別：骨科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "ortho"
+        },
+        "nextIfYes": "64_get_gender",
+        "nextIfNo": "end"
+      },
+      "64_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

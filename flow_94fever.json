@@ -1,0 +1,178 @@
+{
+    "nodes": {
+      "94_fever_start": {
+        "No": "94_1",
+        "question": "您提到{{SYMPTOM}}。請問是否有癌症病史？(1=有, 2=沒有)",
+        "type": "yes_no",
+        "nextIfYes": "94_family_medicine_specialty",
+        "nextIfNo": "94_gender_check"
+      },
+      "94_family_medicine_specialty": {
+        "question": "建議回到原本治療醫院或是該專科或是家庭醫學科。需要我幫您找到最近的家庭醫學科診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "94_get_gender",
+        "nextIfNo": "end"
+      },
+      "94_gender_check": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "94_male_symptoms",
+          "2": "94_female_symptoms"
+        }
+      },
+      "94_male_symptoms": {
+        "No": "94_3",
+        "question": "請問以下哪一種情況最符合？\n1. 耳朵分泌物/耳朵痛\n2. 頭痛/意識混亂\n3. 濃鼻涕\n4. 喉嚨痛\n5. 咳嗽/濃痰\n6. 腸胃道症狀(噁心/嘔吐/腹瀉)\n7. 泌尿道症狀(尿尿疼痛/尿液混濁)\n8. 關節酸痛\n9. 皮膚病灶",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+        "next": {
+          "1": "94_ent_specialty",
+          "2": "94_neuro_specialty",
+          "3": "94_ent_specialty",
+          "4": "94_ent_specialty",
+          "5": "94_pulmonology_ent_choice",
+          "6": "94_gastro_specialty",
+          "7": "94_urology_specialty",
+          "8": "94_rheum_infection_choice",
+          "9": "94_infection_specialty"
+        }
+      },
+      "94_female_symptoms": {
+        "No": "94_4",
+        "question": "請問以下哪一種情況最符合？\n1. 耳朵分泌物/耳朵痛\n2. 頭痛/意識混亂\n3. 濃鼻涕\n4. 喉嚨痛\n5. 咳嗽/濃痰\n6. 腸胃道症狀(噁心/嘔吐/腹瀉)\n7. 泌尿道症狀(尿尿疼痛/尿液混濁)\n8. 婦科症狀(下腹痛/陰道分泌物/陰道異味)\n9. 關節酸痛\n10. 皮膚病灶",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+        "next": {
+          "1": "94_ent_specialty",
+          "2": "94_neuro_specialty",
+          "3": "94_ent_specialty",
+          "4": "94_ent_specialty",
+          "5": "94_pulmonology_ent_choice",
+          "6": "94_gastro_specialty",
+          "7": "94_obgyn_urology_choice",
+          "8": "94_obgyn_specialty",
+          "9": "94_rheum_infection_choice",
+          "10": "94_infection_specialty"
+        }
+      },
+      "94_ent_specialty": {
+        "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "ent"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "94_neuro_specialty": {
+        "question": "建議科別：神經內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "neuro"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "94_pulmonology_ent_choice": {
+        "No": "94_5",
+        "question": "建議您就診：1. 胸腔內科，2. 耳鼻喉科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "94_pulmonology_specialty",
+          "2": "94_ent_specialty"
+        }
+      },
+      "94_pulmonology_specialty": {
+        "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "cm"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "94_gastro_specialty": {
+        "question": "建議科別：腸胃內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "gi"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "94_urology_specialty": {
+        "question": "建議科別：泌尿科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "uro"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "94_obgyn_specialty": {
+        "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "obsgyn"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "94_obgyn_urology_choice": {
+        "No": "94_6",
+        "question": "建議您就診：1. 婦產科，2. 泌尿科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "94_obgyn_specialty",
+          "2": "94_urology_specialty"
+        }
+      },
+      "94_rheum_infection_choice": {
+        "No": "94_7",
+        "question": "建議您就診：1. 風濕免疫科，2. 感染科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "94_rheum_specialty",
+          "2": "94_infection_specialty"
+        }
+      },
+      "94_rheum_specialty": {
+        "question": "建議科別：風濕免疫科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "rheum"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "94_infection_specialty": {
+        "question": "建議科別：感染科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "infection"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "94_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

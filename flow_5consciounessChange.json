@@ -1,14 +1,24 @@
 {
-    "nodes": {
-      "5_consciousnessChange_start": {
-        "question": "您提到意識狀態改變。建議科別：急診。需要我幫您找到最近的急診嗎？(1=是, 2=否)",
-        "type": "yes_no",
-        "meta": {
-          "specialty": "er"
-        },
-        "nextIfYes": "find_clinic",
-        "nextIfNo": "end"
+  "nodes": {
+    "5_consciousnessChange_start": {
+      "No": "5_1",
+      "question": "您提到{{SYMPTOM}}。建議科別：急診。需要我幫您找到最近的急診嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "er"
+      },
+      "nextIfYes": "5_get_gender",
+      "nextIfNo": "end"
+    },
+    "5_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
       }
     }
   }
-  
+}

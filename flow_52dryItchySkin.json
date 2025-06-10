@@ -1,0 +1,97 @@
+{
+    "nodes": {
+      "52_dryItchySkin_start": {
+        "No": "52_1",
+        "question": "您提到{{SYMPTOM}}。請問有沒有皮膚的病灶？(1=有, 2=沒有)",
+        "type": "yes_no",
+        "nextIfYes": "52_skin_lesion_age_check",
+        "nextIfNo": "52_no_lesion_symptoms"
+      },
+      "52_skin_lesion_age_check": {
+        "No": "52_2",
+        "question": "您的年齡是否超過18歲？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "52_dermatology_specialty",
+        "nextIfNo": "52_dermatology_pediatrics_choice"
+      },
+      "52_dermatology_pediatrics_choice": {
+        "No": "52_3",
+        "question": "建議您就診：1. 小兒科，2. 皮膚科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "52_pediatrics_specialty",
+          "2": "52_dermatology_specialty"
+        }
+      },
+      "52_no_lesion_symptoms": {
+        "No": "52_4",
+        "question": "請問以下哪一種情況最符合？\n1. 吃多、喝多、尿多，加上體重減輕的症狀\n2. 腸胃道症狀或皮膚黃色\n3. 手抖、心悸、體重減輕、冒汗\n4. 落髮、體重增加、皮膚乾燥\n5. 其他身心方面疾病",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3", "4", "5"],
+        "next": {
+          "1": "52_endocrine_specialty",
+          "2": "52_gastro_specialty",
+          "3": "52_endocrine_specialty",
+          "4": "52_endocrine_specialty",
+          "5": "52_psychology_specialty"
+        }
+      },
+      "52_dermatology_specialty": {
+        "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "derm"
+        },
+        "nextIfYes": "52_get_gender",
+        "nextIfNo": "end"
+      },
+      "52_pediatrics_specialty": {
+        "question": "建議科別：小兒科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "peds"
+        },
+        "nextIfYes": "52_get_gender",
+        "nextIfNo": "end"
+      },
+      "52_endocrine_specialty": {
+        "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "endocrine"
+        },
+        "nextIfYes": "52_get_gender",
+        "nextIfNo": "end"
+      },
+      "52_gastro_specialty": {
+        "question": "建議科別：腸胃內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "gi"
+        },
+        "nextIfYes": "52_get_gender",
+        "nextIfNo": "end"
+      },
+      "52_psychology_specialty": {
+        "question": "建議科別：身心科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "psy"
+        },
+        "nextIfYes": "52_get_gender",
+        "nextIfNo": "end"
+      },
+      "52_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

@@ -13,25 +13,33 @@
         "5": "10_pulmonary_specialty"
       }
     },
-  
     "10_orthopedic_specialty": {
       "question": "建議科別：骨科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
         "specialty": "ortho"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "10_get_gender",
       "nextIfNo": "end"
     },
-  
     "10_pulmonary_specialty": {
       "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
         "specialty": "cm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "10_get_gender",
       "nextIfNo": "end"
+    },
+    "10_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

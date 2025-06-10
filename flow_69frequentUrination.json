@@ -1,0 +1,146 @@
+{
+    "nodes": {
+      "69_frequentUrination_start": {
+        "No": "69_1",
+        "question": "您提到{{SYMPTOM}}。請問是否過多飲用咖啡因或是酒精？(1=有, 2=沒有)",
+        "type": "yes_no",
+        "nextIfYes": "69_reduce_intake",
+        "nextIfNo": "69_medication_check"
+      },
+      "69_reduce_intake": {
+        "No": "69_2",
+        "question": "建議您考慮減少咖啡因或酒精的飲用，以改善頻尿問題，或考慮家庭醫學科進一步評估，需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "69_get_gender",
+        "nextIfNo": "end"
+      },
+      "69_medication_check": {
+        "No": "69_3",
+        "question": "您是否正在服用以下藥物：抗膽鹼類藥物、心臟科藥物、鋰鹽、茶鹼類藥物、高劑量維他命D或新型糖尿病藥物？(1=有, 2=沒有)",
+        "type": "yes_no",
+        "nextIfYes": "69_medication_discussion",
+        "nextIfNo": "69_symptoms_check"
+      },
+      "69_medication_discussion": {
+        "No": "69_4",
+        "question": "建議您和開立該藥物的醫師討論，或考慮家庭醫學科進一步評估，需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "69_get_gender",
+        "nextIfNo": "end"
+      },
+      "69_symptoms_check": {
+        "No": "69_5",
+        "question": "請問以下哪一種情況最符合？\n1. 合併頻尿、夜尿、尿失禁、排尿時間過長\n2. 有心臟病史\n3. 腳水腫\n4. 枕邊人說會打鼾\n5. 多吃、多喝或體重減輕\n6. 排尿疼痛或尿液混濁合併發燒",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3", "4", "5", "6"],
+        "next": {
+          "1": "69_gender_check_urinary",
+          "2": "69_cardiology_specialty",
+          "3": "69_cardiology_specialty",
+          "4": "69_pulmonology_ent_choice",
+          "5": "69_endocrine_specialty",
+          "6": "69_nephrology_specialty"
+        }
+      },
+      "69_gender_check_urinary": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "69_urology_specialty",
+          "2": "69_obgyn_specialty"
+        }
+      },
+      "69_pulmonology_ent_choice": {
+        "No": "69_7",
+        "question": "建議您就診：1. 胸腔內科，2. 耳鼻喉科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "69_pulmonology_specialty",
+          "2": "69_ent_specialty"
+        }
+      },
+      "69_urology_specialty": {
+        "question": "建議科別：泌尿科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "uro"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "69_obgyn_specialty": {
+        "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "obsgyn"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "69_cardiology_specialty": {
+        "question": "建議科別：心臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "cv"
+        },
+        "nextIfYes": "69_get_gender",
+        "nextIfNo": "end"
+      },
+      "69_pulmonology_specialty": {
+        "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "cm"
+        },
+        "nextIfYes": "69_get_gender",
+        "nextIfNo": "end"
+      },
+      "69_ent_specialty": {
+        "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "ent"
+        },
+        "nextIfYes": "69_get_gender",
+        "nextIfNo": "end"
+      },
+      "69_endocrine_specialty": {
+        "question": "建議科別：內分泌科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "endocrine"
+        },
+        "nextIfYes": "69_get_gender",
+        "nextIfNo": "end"
+      },
+      "69_nephrology_specialty": {
+        "question": "建議科別：腎臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "nephro"
+        },
+        "nextIfYes": "69_get_gender",
+        "nextIfNo": "end"
+      },
+      "69_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

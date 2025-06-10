@@ -1,0 +1,57 @@
+{
+    "nodes": {
+      "68_legSwelling_start": {
+        "No": "68_1",
+        "question": "您提到{{SYMPTOM}}。請問是單側下肢水腫還是雙側下肢水腫？(1=雙側, 2=單側)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "68_bilateral_leg_swelling_check",
+          "2": "68_unilateral_leg_swelling_check"
+        }
+      },
+      "68_bilateral_leg_swelling_check": {
+        "No": "68_2",
+        "question": "請問是否有以下情況？3天之內急劇變化、年紀>45以上、有心臟、肝臟或腎臟病變病史、過去有癌症病史、睡眠呼吸中止症病史或過去用藥史？(1=有, 2=沒有)",
+        "type": "yes_no",
+        "nextIfYes": "68_hospital_specialty",
+        "nextIfNo": "68_family_medicine_specialty"
+      },
+      "68_unilateral_leg_swelling_check": {
+        "No": "68_3",
+        "question": "單側下肢水腫，是否3天之內急劇變化？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "68_hospital_specialty",
+        "nextIfNo": "68_family_medicine_specialty"
+      },
+      "68_hospital_specialty": {
+        "question": "建議科別：醫院(建議做抽血檢查)。需要我幫您找到最近的醫院嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "hospital"
+        },
+        "nextIfYes": "68_get_gender",
+        "nextIfNo": "end"
+      },
+      "68_family_medicine_specialty": {
+        "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "68_get_gender",
+        "nextIfNo": "end"
+      },
+      "68_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

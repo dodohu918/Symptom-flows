@@ -1,0 +1,69 @@
+{
+    "nodes": {
+      "80_urinaryIncontinence_start": {
+        "No": "80_1",
+        "question": "您提到{{SYMPTOM}}。請問是否有在使用利尿劑、肌肉鬆弛劑或抗憂鬱藥物？(1=有, 2=沒有)",
+        "type": "yes_no",
+        "nextIfYes": "80_family_medicine_specialty",
+        "nextIfNo": "80_gender_check"
+      },
+      "80_family_medicine_specialty": {
+        "question": "請回到原本開藥醫師諮詢或是家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "fm"
+        },
+        "nextIfYes": "80_get_gender",
+        "nextIfNo": "end"
+      },
+      "80_gender_check": {
+        "No": "80_2",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "80_urology_specialty",
+          "2": "80_obgyn_urology_choice"
+        }
+      },
+      "80_urology_specialty": {
+        "question": "建議科別：泌尿科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "uro"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "80_obgyn_urology_choice": {
+        "No": "80_3",
+        "question": "建議您就診：1. 婦產科，2. 泌尿科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "80_obgyn_specialty",
+          "2": "80_urology_specialty"
+        }
+      },
+      "80_obgyn_specialty": {
+        "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "obsgyn"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "80_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

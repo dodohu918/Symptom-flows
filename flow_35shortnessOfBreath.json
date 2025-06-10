@@ -16,7 +16,7 @@
       "meta": {
         "specialty": "cm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "35_get_gender",
       "nextIfNo": "end"
     },
     "35_cardiology_specialty": {
@@ -25,8 +25,18 @@
       "meta": {
         "specialty": "cv"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "35_get_gender",
       "nextIfNo": "end"
+    },
+    "35_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

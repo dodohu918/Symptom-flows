@@ -31,3 +31,4 @@ Note7: the question of the start node will always start with exactly the this st
         }
 Note8: give each node with a section "No", except for the node that has a section "meta" in it. Start with number after the flow_, follow by an underscore and the number of the node within the nodes.
 Note9: give me a json file name to this flow at the start
+Note10: Before find clinic node, add a get-gender node. The name follows pevious rules(the name is a number followed by get_gender) but the "No" of this node always 0_10 regardless of its sequence

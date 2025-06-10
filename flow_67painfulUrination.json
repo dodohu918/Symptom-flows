@@ -1,0 +1,49 @@
+{
+  "nodes": {
+    "67_painfulUrination_start": {
+      "No": "67_1",
+      "question": "您提到{{SYMPTOM}}。請問有沒有尿液混濁？(1=有, 2=沒有)",
+      "type": "yes_no",
+      "nextIfYes": "67_gender_check",
+      "nextIfNo": "67_gender_check"
+    },
+    "67_gender_check": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "67_urology_specialty",
+        "2": "67_obgyn_urology_choice"
+      }
+    },
+    "67_urology_specialty": {
+      "question": "建議科別：泌尿科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "uro"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    },
+    "67_obgyn_urology_choice": {
+      "No": "67_2",
+      "question": "建議您就診：1. 婦產科，2. 泌尿科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "67_obgyn_specialty",
+        "2": "67_urology_specialty"
+      }
+    },
+    "67_obgyn_specialty": {
+      "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "obsgyn"
+      },
+      "nextIfYes": "find_clinic",
+      "nextIfNo": "end"
+    }
+  }
+}

@@ -17,7 +17,7 @@
       "meta": {
         "specialty": "ent"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "20_get_gender",
       "nextIfNo": "end"
     },
     "20_ent_gastro_choice": {
@@ -36,8 +36,18 @@
       "meta": {
         "specialty": "gi"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "20_get_gender",
       "nextIfNo": "end"
+    },
+    "20_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

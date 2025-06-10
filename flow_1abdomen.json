@@ -1,70 +1,150 @@
 {
   "nodes": {
-    "1_abdomen_start": {
+    "1_acuteAbdominalPain_start": {
       "No": "1_1",
-      "question": "您提到{{SYMPTOM}}。這是急性腹痛（突然且嚴重）嗎？(1=是, 2=否)",
+      "question": "您提到{{SYMPTOM}}。請問這是局部性腹痛還是廣泛性腹痛？(1=局部性, 2=廣泛性)",
       "type": "yes_no",
-      "nextIfYes": "1_abdomen_acute",
-      "nextIfNo": "1_abdomen_diffuse" 
+      "nextIfYes": "1_localized_abdominal_pain",
+      "nextIfNo": "1_er_specialty"
     },
-    "1_abdomen_acute": {
+    "1_er_specialty": {
+      "question": "建議科別：急診。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "er"
+      },
+      "nextIfYes": "1_get_gender",
+      "nextIfNo": "end"
+    },
+    "1_localized_abdominal_pain": {
       "No": "1_2",
-      "question": "這種疼痛是局部的還是整個腹部擴散的？（1 = 局部, 2 = 整個腹部）",
-      "type": "multiple_choice",
-      "options": ["1", "2"],
-      "next": {
-        "1": "1_abdomen_localized",
-        "2": "1_abdomen_diffuse"
-      }
-    },
-    "1_abdomen_localized": {
-      "No": "1_3",
-      "question": "最痛的是哪個部位？（1 = 左上部, 2 = 左下部, 3 = 右上部, 4 = 右下部）",
+      "question": "請問腹痛主要位置在哪裡？(1=左上腹, 2=左下腹, 3=右上腹, 4=右下腹)",
       "type": "multiple_choice",
       "options": ["1", "2", "3", "4"],
       "next": {
-        "1": "1_left_upper_followup",
-        "2": "1_left_lower_followup",
-        "3": "1_right_upper_followup",
-        "4": "1_right_lower_followup"
+        "1": "1_upper_left_pain",
+        "2": "1_lower_left_pain",
+        "3": "1_upper_right_pain",
+        "4": "1_lower_right_pain"
       }
     },
-    "1_left_upper_followup": {
+    "1_upper_left_pain": {
+      "No": "1_3",
+      "question": "請問有以下哪一種情況？\n1. 合併胸悶痛\n2. 合併有痰或喘的情況\n3. 合併血便\n4. 合併尿尿疼痛/尿液混濁/血尿\n5. 合併胸口灼熱",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3", "4", "5"],
+      "next": {
+        "1": "1_cardiology_specialty",
+        "2": "1_pulmonology_specialty",
+        "3": "1_colorectal_specialty",
+        "4": "1_nephrology_specialty",
+        "5": "1_gastro_specialty"
+      }
+    },
+    "1_lower_left_pain": {
       "No": "1_4",
-      "question": "您是否同時有胸痛的症狀？(1=是, 2=否)",
-      "type": "yes_no",
-      "nextIfYes": "1_cardiology_specialty",
-      "nextIfNo": "1_thoracic_specialty"
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "1_male_lower_left",
+        "2": "1_female_lower_left"
+      }
     },
-    "1_right_lower_followup": {
+    "1_male_lower_left": {
       "No": "1_5",
-      "question": "您有沒有噁心或嘔吐的情況？(1=是, 2=否)",
-      "type": "yes_no",
-      "nextIfYes": "1_gastro_specialty",
-      "nextIfNo": "1_colorectal_specialty"
+      "question": "請問有以下哪一種情況？\n1. 合併血便\n2. 合併尿尿疼痛/尿液混濁/血尿",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "1_colorectal_postGender_specialty",
+        "2": "1_nephrology_postGender_specialty"
+      }
     },
-    "1_left_lower_followup": {
+    "1_female_lower_left": {
       "No": "1_6",
-      "question": "您的排便習慣有沒有改變？(1=是, 2=否)",
-      "type": "yes_no",
-      "nextIfYes": "1_colorectal_specialty",
-      "nextIfNo": "1_gastro_specialty"
+      "question": "請問有以下哪一種情況？\n1. 合併血便\n2. 婦科症狀\n3. 合併尿尿疼痛/尿液混濁/血尿",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3"],
+      "next": {
+        "1": "1_colorectal_postGender_specialty",
+        "2": "1_obgyn_specialty",
+        "3": "1_nephrology_postGender_specialty"
+      }
     },
-    "1_right_upper_followup": {
+    "1_upper_right_pain": {
       "No": "1_7",
-      "question": "您的疼痛有沒有放射到背部？(1=是, 2=否)",
-      "type": "yes_no",
-      "nextIfYes": "1_thoracic_specialty",
-      "nextIfNo": "1_gastro_specialty"
+      "question": "請問有以下哪一種情況？\n1. 合併胸悶痛\n2. 合併有痰或喘的情況\n3. 合併血便\n4. 合併尿尿疼痛/尿液混濁/血尿",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3", "4"],
+      "next": {
+        "1": "1_cardiology_specialty",
+        "2": "1_pulmonology_specialty",
+        "3": "1_colorectal_specialty",
+        "4": "1_nephrology_specialty"
+      }
     },
-    "1_abdomen_diffuse": {
+    "1_lower_right_pain": {
       "No": "1_8",
-      "question": "您的糞便中有血嗎？(1=是, 2=否)",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "1_male_lower_right",
+        "2": "1_female_lower_right"
+      }
+    },
+    "1_male_lower_right": {
+      "No": "1_9",
+      "question": "請問有以下哪一種情況？\n1. 位置在鼠蹊部旁\n2. 合併血便\n3. 合併尿尿疼痛/尿液混濁/血尿",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3"],
+      "next": {
+        "1": "1_general_surgery_specialty",
+        "2": "1_colorectal_postGender_specialty",
+        "3": "1_nephrology_postGender_specialty"
+      }
+    },
+    "1_female_lower_right": {
+      "No": "1_10",
+      "question": "請問有以下哪一種情況？\n1. 位置在鼠蹊部旁\n2. 合併血便\n3. 婦科症狀\n4. 合併尿尿疼痛/尿液混濁/血尿",
+      "type": "multiple_choice",
+      "options": ["1", "2", "3", "4"],
+      "next": {
+        "1": "1_general_surgery_specialty",
+        "2": "1_colorectal_postGender_specialty",
+        "3": "1_obgyn_specialty",
+        "4": "1_nephrology_postGender_specialty"
+      }
+    },
+    "1_cardiology_specialty": {
+      "question": "建議科別：心臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
-      "nextIfYes": "1_colorectal_specialty",
-      "nextIfNo": "1_nephrology_specialty"
+      "meta": {
+        "specialty": "cv"
+      },
+      "nextIfYes": "1_get_gender",
+      "nextIfNo": "end"
+    },
+    "1_pulmonology_specialty": {
+      "question": "建議科別：胸腔內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "cm"
+      },
+      "nextIfYes": "1_get_gender",
+      "nextIfNo": "end"
     },
     "1_colorectal_specialty": {
+      "question": "建議科別：大腸直腸外科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "crs"
+      },
+      "nextIfYes": "1_get_gender",
+      "nextIfNo": "end"
+    },
+    "1_colorectal_postGender_specialty": {
       "question": "建議科別：大腸直腸外科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
@@ -73,32 +153,60 @@
       "nextIfYes": "find_clinic",
       "nextIfNo": "end"
     },
-    "1_cardiology_specialty": {
-      "question": "建議科別：胃腸科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+    "1_nephrology_specialty": {
+      "question": "建議科別：腎臟科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
-        "specialty": "gi"
+        "specialty": "nephro"
+      },
+      "nextIfYes": "1_get_gender",
+      "nextIfNo": "end"
+    },
+    "1_nephrology_postGender_specialty": {
+      "question": "建議科別：腎臟科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "nephro"
       },
       "nextIfYes": "find_clinic",
       "nextIfNo": "end"
     },
     "1_gastro_specialty": {
-      "question": "建議科別：胃腸科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "question": "建議科別：腸胃科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
         "specialty": "gi"
+      },
+      "nextIfYes": "1_get_gender",
+      "nextIfNo": "end"
+    },
+    "1_general_surgery_specialty": {
+      "question": "建議科別：一般外科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "gs"
       },
       "nextIfYes": "find_clinic",
       "nextIfNo": "end"
     },
-    "1_thoracic_specialty": {
-      "question": "建議科別：胃腸科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+    "1_obgyn_specialty": {
+      "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
-        "specialty": "gi"
+        "specialty": "obsgyn"
       },
       "nextIfYes": "find_clinic",
       "nextIfNo": "end"
+    },
+    "1_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

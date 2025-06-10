@@ -7,15 +7,18 @@
       "nextIfYes": "4_drugs_exists",
       "nextIfNo": "4_no_drugs_choice"
     },
-  
+
     "4_drugs_exists": {
       "No": "4_2",
-      "question": "建議您先洽詢開立該藥物的醫師，或考慮家庭醫學科就診。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "question": "建議您先洽詢開立該藥物的醫師，或考慮家庭醫學科就診。需要我幫您找到最近的家醫科診所嗎？(1=是, 2=否)",
       "type": "yes_no",
-      "nextIfYes": "4_family_medicine_specialty",
+      "meta": {
+        "specialty": "fm"
+      },
+      "nextIfYes": "4_get_gender",
       "nextIfNo": "end"
     },
-  
+
     "4_no_drugs_choice": {
       "No": "4_3",
       "question": "建議您就診：1. 腎臟內科，2. 家庭醫學科。請選擇要前往的科別？",
@@ -26,25 +29,36 @@
         "2": "4_family_medicine_specialty"
       }
     },
-  
+
     "4_renal_specialty": {
       "question": "建議科別：腎臟內科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
         "specialty": "nephro"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "4_get_gender",
       "nextIfNo": "end"
     },
-  
+
     "4_family_medicine_specialty": {
       "question": "建議科別：家庭醫學科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
       "type": "yes_no",
       "meta": {
         "specialty": "fm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "4_get_gender",
       "nextIfNo": "end"
+    },
+    
+    "4_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

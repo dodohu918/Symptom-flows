@@ -1,0 +1,50 @@
+{
+    "nodes": {
+      "54_uninjuredSkinWithWound_start": {
+        "No": "54_1",
+        "question": "您提到{{SYMPTOM}}。您的年齡是否超過18歲？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "54_dermatology_specialty",
+        "nextIfNo": "54_dermatology_pediatrics_choice"
+      },
+      "54_dermatology_pediatrics_choice": {
+        "No": "54_2",
+        "question": "建議您就診：1. 小兒科，2. 皮膚科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "54_pediatrics_specialty",
+          "2": "54_dermatology_specialty"
+        }
+      },
+      "54_dermatology_specialty": {
+        "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "derm"
+        },
+        "nextIfYes": "54_get_gender",
+        "nextIfNo": "end"
+      },
+      "54_pediatrics_specialty": {
+        "question": "建議科別：小兒科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "peds"
+        },
+        "nextIfYes": "54_get_gender",
+        "nextIfNo": "end"
+      },
+      "54_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

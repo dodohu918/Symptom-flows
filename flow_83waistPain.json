@@ -1,0 +1,102 @@
+{
+    "nodes": {
+      "83_waistPain_start": {
+        "No": "83_1",
+        "question": "您提到{{SYMPTOM}}。請問以下哪一種情況最符合？\n1. 泌尿道症狀\n2. 合併其他位置骨頭關節疼痛\n3. 最近曾經有外傷的情況\n4. 疼痛延伸到某一側腳底，合併有痠或是麻的感覺",
+        "type": "multiple_choice",
+        "options": ["1", "2", "3", "4"],
+        "next": {
+          "1": "83_urology_symptoms",
+          "2": "83_rheum_specialty",
+          "3": "83_ortho_specialty",
+          "4": "83_ortho_specialty"
+        }
+      },
+      "83_urology_symptoms": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "83_nephrology_urology_choice",
+          "2": "83_nephrology_obgyn_choice"
+        }
+      },
+      "83_nephrology_urology_choice": {
+        "No": "83_3",
+        "question": "建議您就診：1. 腎臟科，2. 泌尿科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "83_nephrology_specialty",
+          "2": "83_urology_specialty"
+        }
+      },
+      "83_nephrology_obgyn_choice": {
+        "No": "83_4",
+        "question": "建議您就診：1. 腎臟科，2. 婦產科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "83_nephrology_specialty",
+          "2": "83_obgyn_specialty"
+        }
+      },
+      "83_rheum_specialty": {
+        "question": "建議科別：風濕免疫科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "rheum"
+        },
+        "nextIfYes": "83_get_gender",
+        "nextIfNo": "end"
+      },
+      "83_ortho_specialty": {
+        "question": "建議科別：骨科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "ortho"
+        },
+        "nextIfYes": "83_get_gender",
+        "nextIfNo": "end"
+      },
+      "83_nephrology_specialty": {
+        "question": "建議科別：腎臟科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "nephro"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "83_urology_specialty": {
+        "question": "建議科別：泌尿科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "uro"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "83_obgyn_specialty": {
+        "question": "建議科別：婦產科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "obsgyn"
+        },
+        "nextIfYes": "find_clinic",
+        "nextIfNo": "end"
+      },
+      "83_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

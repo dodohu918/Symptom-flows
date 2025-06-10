@@ -1,0 +1,57 @@
+{
+    "nodes": {
+      "75_drySkin_start": {
+        "No": "75_1",
+        "question": "您提到{{SYMPTOM}}。請問有沒有皮膚的病灶？(1=有, 2=沒有)",
+        "type": "yes_no",
+        "nextIfYes": "75_skin_lesion_age_check",
+        "nextIfNo": "75_dermatology_specialty"
+      },
+      "75_skin_lesion_age_check": {
+        "No": "75_2",
+        "question": "您的年齡是否超過18歲？(1=是, 2=否)",
+        "type": "yes_no",
+        "nextIfYes": "75_dermatology_specialty",
+        "nextIfNo": "75_dermatology_pediatrics_choice"
+      },
+      "75_dermatology_pediatrics_choice": {
+        "No": "75_3",
+        "question": "建議您就診：1. 小兒科，2. 皮膚科。請選擇要前往的科別？",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "75_pediatrics_specialty",
+          "2": "75_dermatology_specialty"
+        }
+      },
+      "75_dermatology_specialty": {
+        "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "derm"
+        },
+        "nextIfYes": "75_get_gender",
+        "nextIfNo": "end"
+      },
+      "75_pediatrics_specialty": {
+        "question": "建議科別：小兒科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+        "type": "yes_no",
+        "meta": {
+          "specialty": "peds"
+        },
+        "nextIfYes": "75_get_gender",
+        "nextIfNo": "end"
+      },
+      "75_get_gender": {
+        "No": "0_10",
+        "question": "請問您的性別是？(1=男性, 2=女性)",
+        "type": "multiple_choice",
+        "options": ["1", "2"],
+        "next": {
+          "1": "find_clinic",
+          "2": "find_clinic"
+        }
+      }
+    }
+  }
+  

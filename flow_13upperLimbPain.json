@@ -75,7 +75,7 @@
       "meta": {
         "specialty": "er"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "13_get_gender",
       "nextIfNo": "end"
     },
     "13_surgery_specialty": {
@@ -84,7 +84,7 @@
       "meta": {
         "specialty": "gs"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "13_get_gender",
       "nextIfNo": "end"
     },
     "13_rheum_specialty": {
@@ -93,7 +93,7 @@
       "meta": {
         "specialty": "rheum"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "13_get_gender",
       "nextIfNo": "end"
     },
     "13_fm_specialty": {
@@ -102,7 +102,7 @@
       "meta": {
         "specialty": "fm"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "13_get_gender",
       "nextIfNo": "end"
     },
     "13_cv_specialty": {
@@ -111,7 +111,7 @@
       "meta": {
         "specialty": "cv"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "13_get_gender",
       "nextIfNo": "end"
     },
     "13_ortho_specialty": {
@@ -120,7 +120,7 @@
       "meta": {
         "specialty": "ortho"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "13_get_gender",
       "nextIfNo": "end"
     },
     "13_rehab_specialty": {
@@ -129,8 +129,18 @@
       "meta": {
         "specialty": "rehab"
       },
-      "nextIfYes": "find_clinic",
+      "nextIfYes": "13_get_gender",
       "nextIfNo": "end"
+    },
+    "13_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
+      }
     }
   }
 }

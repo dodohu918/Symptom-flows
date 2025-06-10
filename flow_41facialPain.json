@@ -1,43 +1,52 @@
 {
-    "nodes": {
-      "41_facialPain_start": {
-        "No": "41_1",
-        "question": "您提到{{SYMPTOM}}。請問以下哪一種情況最符合？\n1. 臉部皮膚有發紅/腫起/局部發熱等症狀\n2. 合併有鼻塞或是濃鼻涕或是聞到臭味",
-        "type": "multiple_choice",
-        "options": ["1", "2"],
-        "next": {
-          "1": "41_dermatology_ent_choice",
-          "2": "41_ent_specialty"
-        }
+  "nodes": {
+    "41_facialPain_start": {
+      "No": "41_1",
+      "question": "您提到{{SYMPTOM}}。請問以下哪一種情況最符合？<br />1. 臉部皮膚有發紅/腫/局部發熱等症狀<img src=\"https://github.com/dodohu918/Flow_related_image/blob/master/facial_swelling.jpg?raw=true\" alt=\"測試圖片\" width=\"200\" /><br />2. 合併有鼻塞或是濃鼻涕或是聞到臭味",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "41_dermatology_ent_choice",
+        "2": "41_ent_specialty"
+      }
+    },
+    "41_dermatology_ent_choice": {
+      "No": "41_2",
+      "question": "建議您就診：1. 皮膚科，2. 耳鼻喉科。請選擇要前往的科別？",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "41_dermatology_specialty",
+        "2": "41_ent_specialty"
+      }
+    },
+    "41_dermatology_specialty": {
+      "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "derm"
       },
-      "41_dermatology_ent_choice": {
-        "No": "41_2",
-        "question": "建議您就診：1. 皮膚科，2. 耳鼻喉科。請選擇要前往的科別？",
-        "type": "multiple_choice",
-        "options": ["1", "2"],
-        "next": {
-          "1": "41_dermatology_specialty",
-          "2": "41_ent_specialty"
-        }
+      "nextIfYes": "41_get_gender",
+      "nextIfNo": "end"
+    },
+    "41_ent_specialty": {
+      "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
+      "type": "yes_no",
+      "meta": {
+        "specialty": "ent"
       },
-      "41_dermatology_specialty": {
-        "question": "建議科別：皮膚科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
-        "type": "yes_no",
-        "meta": {
-          "specialty": "derm"
-        },
-        "nextIfYes": "find_clinic",
-        "nextIfNo": "end"
-      },
-      "41_ent_specialty": {
-        "question": "建議科別：耳鼻喉科。需要我幫您找到最近的診所嗎？(1=是, 2=否)",
-        "type": "yes_no",
-        "meta": {
-          "specialty": "ent"
-        },
-        "nextIfYes": "find_clinic",
-        "nextIfNo": "end"
+      "nextIfYes": "41_get_gender",
+      "nextIfNo": "end"
+    },
+    "41_get_gender": {
+      "No": "0_10",
+      "question": "請問您的性別是？(1=男性, 2=女性)",
+      "type": "multiple_choice",
+      "options": ["1", "2"],
+      "next": {
+        "1": "find_clinic",
+        "2": "find_clinic"
       }
     }
   }
-  
+}
